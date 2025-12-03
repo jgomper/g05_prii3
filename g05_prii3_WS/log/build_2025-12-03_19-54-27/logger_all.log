@@ -1,0 +1,51 @@
+[0.378s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'sprint4_eurobot']
+[0.378s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f69f22107c0>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=['sprint4_eurobot'], packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=12, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f69f22107c0>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f69f221b4c0>)
+[0.621s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.621s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.621s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.621s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.621s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.621s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.621s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/rodrigo/Proyecto_III/g05_prii3_ws/g05_prii3_WS'
+[0.621s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.621s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.621s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.622s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.622s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.622s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.622s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.622s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.622s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.641s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_cmake' and name 'gXX_prii3_WS'
+[0.641s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.641s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.641s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.641s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.641s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.641s] WARNING:colcon.colcon_core.package_selection:ignoring unknown package 'sprint4_eurobot' in --packages-select
+[0.668s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'gXX_prii3_WS' in '.'
+[0.669s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.669s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.675s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 371 installed packages in /opt/ros/foxy
+[0.687s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.811s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.812s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.812s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[0.812s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[0.812s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[0.812s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[0.820s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[0.820s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[0.821s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[0.847s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[0.855s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.856s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rodrigo/Proyecto_III/g05_prii3_ws/g05_prii3_WS/install/local_setup.ps1'
+[0.859s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/rodrigo/Proyecto_III/g05_prii3_ws/g05_prii3_WS/install/_local_setup_util_ps1.py'
+[0.861s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rodrigo/Proyecto_III/g05_prii3_ws/g05_prii3_WS/install/setup.ps1'
+[0.862s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rodrigo/Proyecto_III/g05_prii3_ws/g05_prii3_WS/install/local_setup.sh'
+[0.863s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/rodrigo/Proyecto_III/g05_prii3_ws/g05_prii3_WS/install/_local_setup_util_sh.py'
+[0.864s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rodrigo/Proyecto_III/g05_prii3_ws/g05_prii3_WS/install/setup.sh'
+[0.865s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rodrigo/Proyecto_III/g05_prii3_ws/g05_prii3_WS/install/local_setup.bash'
+[0.866s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rodrigo/Proyecto_III/g05_prii3_ws/g05_prii3_WS/install/setup.bash'
+[0.868s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rodrigo/Proyecto_III/g05_prii3_ws/g05_prii3_WS/install/local_setup.zsh'
+[0.869s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rodrigo/Proyecto_III/g05_prii3_ws/g05_prii3_WS/install/setup.zsh'
