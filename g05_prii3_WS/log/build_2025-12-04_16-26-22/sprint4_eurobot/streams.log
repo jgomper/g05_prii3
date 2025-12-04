@@ -1,0 +1,22 @@
+[0.558s] Invoking command in '/home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/src/sprint4_eurobot': PYTHONPATH=/home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/sprint4_eurobot build --build-base /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build install --record /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/install.log --install-scripts $base/lib/sprint4_eurobot --single-version-externally-managed install_data
+[0.752s] running egg_info
+[0.752s] writing ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/PKG-INFO
+[0.753s] writing dependency_links to ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/dependency_links.txt
+[0.753s] writing entry points to ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/entry_points.txt
+[0.753s] writing requirements to ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/requires.txt
+[0.753s] writing top-level names to ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/top_level.txt
+[0.784s] reading manifest file '../../build/sprint4_eurobot/sprint4_eurobot.egg-info/SOURCES.txt'
+[0.785s] writing manifest file '../../build/sprint4_eurobot/sprint4_eurobot.egg-info/SOURCES.txt'
+[0.785s] running build
+[0.785s] running build_py
+[0.785s] running install
+[0.786s] running install_lib
+[0.787s] running install_data
+[0.787s] copying world/eurobot.world -> /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/world
+[0.787s] running install_egg_info
+[0.789s] removing '/home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot-0.0.0-py3.8.egg-info' (and everything under it)
+[0.789s] Copying ../../build/sprint4_eurobot/sprint4_eurobot.egg-info to /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot-0.0.0-py3.8.egg-info
+[0.790s] running install_scripts
+[0.805s] Installing cenital_node script to /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/sprint4_eurobot
+[0.805s] writing list of installed files to '/home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/install.log'
+[0.824s] Invoked command in '/home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/src/sprint4_eurobot' returned '0': PYTHONPATH=/home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/sprint4_eurobot build --build-base /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build install --record /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/install.log --install-scripts $base/lib/sprint4_eurobot --single-version-externally-managed install_data

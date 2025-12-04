@@ -1,0 +1,3 @@
+[console_scripts]
+cenital_node = sprint4_eurobot.cenital_node:main
+

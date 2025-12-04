@@ -16,6 +16,7 @@ setup(
         # Archivos Launch y World
         (os.path.join('share', package_name, 'launch'), glob('launch/*.py')),
         (os.path.join('share', package_name, 'world'), glob('world/*.world')),
+        (os.path.join('share', package_name, 'rviz'), glob('rviz/*.rviz')),
         
         # --- Texturas y scripts de materiales ---
         (os.path.join('share', package_name, 'materials/scripts'), glob('materials/scripts/*')),

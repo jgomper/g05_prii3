@@ -1,0 +1,24 @@
+[0.545s] Invoking command in '/home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/src/sprint4_eurobot': PYTHONPATH=/home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/sprint4_eurobot build --build-base /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build install --record /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/install.log --install-scripts $base/lib/sprint4_eurobot --single-version-externally-managed install_data
+[0.713s] running egg_info
+[0.713s] writing ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/PKG-INFO
+[0.713s] writing dependency_links to ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/dependency_links.txt
+[0.714s] writing entry points to ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/entry_points.txt
+[0.714s] writing requirements to ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/requires.txt
+[0.714s] writing top-level names to ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/top_level.txt
+[0.743s] reading manifest file '../../build/sprint4_eurobot/sprint4_eurobot.egg-info/SOURCES.txt'
+[0.744s] writing manifest file '../../build/sprint4_eurobot/sprint4_eurobot.egg-info/SOURCES.txt'
+[0.744s] running build
+[0.744s] running build_py
+[0.744s] copying sprint4_eurobot/cenital_node.py -> /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot
+[0.744s] running install
+[0.745s] running install_lib
+[0.746s] copying /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot/cenital_node.py -> /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot
+[0.746s] byte-compiling /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot/cenital_node.py to cenital_node.cpython-38.pyc
+[0.748s] running install_data
+[0.748s] running install_egg_info
+[0.750s] removing '/home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot-0.0.0-py3.8.egg-info' (and everything under it)
+[0.750s] Copying ../../build/sprint4_eurobot/sprint4_eurobot.egg-info to /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot-0.0.0-py3.8.egg-info
+[0.751s] running install_scripts
+[0.765s] Installing cenital_node script to /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/sprint4_eurobot
+[0.765s] writing list of installed files to '/home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/install.log'
+[0.784s] Invoked command in '/home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/src/sprint4_eurobot' returned '0': PYTHONPATH=/home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/sprint4_eurobot build --build-base /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build install --record /home/jgomper/Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/install.log --install-scripts $base/lib/sprint4_eurobot --single-version-externally-managed install_data
