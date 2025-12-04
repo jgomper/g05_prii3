@@ -1,4 +1,6 @@
 from setuptools import setup
+import os
+from glob import glob
 
 package_name = 'sprint4_eurobot'
 
@@ -10,14 +12,21 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        ('share/' + package_name + '/launch', ['launch/eurobot_launch.py']),
-        ('share/' + package_name + '/world', ['world/eurobot.world']),
+        
+        # Archivos Launch y World
+        (os.path.join('share', package_name, 'launch'), glob('launch/*.py')),
+        (os.path.join('share', package_name, 'world'), glob('world/*.world')),
+        
+        # --- NUEVO: Instalar texturas y scripts de materiales ---
+        (os.path.join('share', package_name, 'materials/scripts'), glob('materials/scripts/*')),
+        (os.path.join('share', package_name, 'materials/textures'), glob('materials/textures/*')),
+        # --------------------------------------------------------
     ],
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='rodrigo',
     maintainer_email='rbriram@upv.edu.es',
-    description='TODO: Package description',
+    description='Sprint 4 Eurobot - Recreación y Visión',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={

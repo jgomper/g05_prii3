@@ -20,8 +20,8 @@
           <geometry><box><size>3.0 2.0 0.01</size></box></geometry>
           <material>
             <script>
-              <uri>file://media/materials/scripts/gazebo.material</uri>
-              <name>Gazebo/White</name>
+              <uri>file://materials/scripts/eurobot.material</uri>
+              <name>Eurobot/Tablero_Final</name>
             </script>
           </material>
         </visual>
