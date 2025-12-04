@@ -27,3 +27,18 @@ material Eurobot/ArucoOrigen
     }
   }
 }
+
+material Eurobot/ArucoRobot
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture materials/textures/aruco_robot.png
+        scale 1.0 1.0
+      }
+    }
+  }
+}

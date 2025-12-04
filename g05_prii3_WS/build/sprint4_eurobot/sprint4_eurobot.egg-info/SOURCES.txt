@@ -11,7 +11,10 @@ setup.py
 launch/eurobot_launch.py
 materials/scripts/eurobot.material
 materials/textures/aruco_origin.png
+materials/textures/aruco_robot.png
 materials/textures/mapa_eurobot_rotated.png
+models/waffle_aruco/model.config
+models/waffle_aruco/model.sdf
 resource/sprint4_eurobot
 sprint4_eurobot/__init__.py
 test/test_copyright.py

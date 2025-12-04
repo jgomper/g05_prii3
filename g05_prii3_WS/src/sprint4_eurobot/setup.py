@@ -21,6 +21,9 @@ setup(
         (os.path.join('share', package_name, 'materials/scripts'), glob('materials/scripts/*')),
         (os.path.join('share', package_name, 'materials/textures'), glob('materials/textures/*')),
         # --------------------------------------------------------
+
+        # Install models
+        (os.path.join('share', package_name, 'models/waffle_aruco'), glob('models/waffle_aruco/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
