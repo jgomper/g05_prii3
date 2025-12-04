@@ -84,5 +84,25 @@
       </link>
     </model>
 
+    <model name='origin_marker'>
+      <static>1</static>
+      <pose>-1.275 0.7 0.011 0 0 0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.2 0.2 0.001</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://materials/scripts/eurobot.material</uri>
+              <name>Eurobot/ArucoOrigen</name>
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+
   </world>
 </sdf>

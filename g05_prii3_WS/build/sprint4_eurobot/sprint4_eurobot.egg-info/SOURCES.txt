@@ -10,7 +10,7 @@ setup.py
 ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/zip-safe
 launch/eurobot_launch.py
 materials/scripts/eurobot.material
-materials/textures/mapa_eurobot.png
+materials/textures/aruco_origin.png
 materials/textures/mapa_eurobot_rotated.png
 resource/sprint4_eurobot
 sprint4_eurobot/__init__.py

@@ -12,3 +12,18 @@ material Eurobot/Tablero_Final
     }
   }
 }
+
+material Eurobot/ArucoOrigen
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture materials/textures/aruco_origin.png
+        scale 1.0 1.0
+      }
+    }
+  }
+}
