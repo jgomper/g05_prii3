@@ -1,0 +1,17 @@
+[0.548s] Invoking command in '/home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot': PYTHONPATH=/home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build --no-deps symlink_data
+[0.736s] running develop
+[0.840s] running egg_info
+[0.840s] writing sprint4_eurobot.egg-info/PKG-INFO
+[0.841s] writing dependency_links to sprint4_eurobot.egg-info/dependency_links.txt
+[0.841s] writing entry points to sprint4_eurobot.egg-info/entry_points.txt
+[0.841s] writing requirements to sprint4_eurobot.egg-info/requires.txt
+[0.841s] writing top-level names to sprint4_eurobot.egg-info/top_level.txt
+[0.869s] reading manifest file 'sprint4_eurobot.egg-info/SOURCES.txt'
+[0.870s] writing manifest file 'sprint4_eurobot.egg-info/SOURCES.txt'
+[0.901s] running build_ext
+[0.901s] Creating /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4-eurobot.egg-link (link to .)
+[0.902s] Installing cenital_node script to /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/sprint4_eurobot
+[0.902s] 
+[0.902s] Installed /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot
+[0.902s] running symlink_data
+[0.949s] Invoked command in '/home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot' returned '0': PYTHONPATH=/home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build --no-deps symlink_data

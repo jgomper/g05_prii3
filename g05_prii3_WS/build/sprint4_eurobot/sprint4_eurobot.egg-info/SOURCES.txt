@@ -17,7 +17,12 @@ models/waffle_aruco/model.config
 models/waffle_aruco/model.sdf
 resource/sprint4_eurobot
 sprint4_eurobot/__init__.py
-test/test_copyright.py
-test/test_flake8.py
-test/test_pep257.py
+sprint4_eurobot/cenital_node.py
+sprint4_eurobot.egg-info/PKG-INFO
+sprint4_eurobot.egg-info/SOURCES.txt
+sprint4_eurobot.egg-info/dependency_links.txt
+sprint4_eurobot.egg-info/entry_points.txt
+sprint4_eurobot.egg-info/requires.txt
+sprint4_eurobot.egg-info/top_level.txt
+sprint4_eurobot.egg-info/zip-safe
 world/eurobot.world

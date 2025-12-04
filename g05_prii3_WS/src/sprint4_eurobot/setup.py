@@ -17,10 +17,10 @@ setup(
         (os.path.join('share', package_name, 'launch'), glob('launch/*.py')),
         (os.path.join('share', package_name, 'world'), glob('world/*.world')),
         
-        # --- NUEVO: Instalar texturas y scripts de materiales ---
+        # --- Texturas y scripts de materiales ---
         (os.path.join('share', package_name, 'materials/scripts'), glob('materials/scripts/*')),
         (os.path.join('share', package_name, 'materials/textures'), glob('materials/textures/*')),
-        # --------------------------------------------------------
+        # ----------------------------------------
 
         # Install models
         (os.path.join('share', package_name, 'models/waffle_aruco'), glob('models/waffle_aruco/*')),
@@ -34,6 +34,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            # AQUÍ ESTÁ EL CAMBIO CLAVE:
+            'cenital_node = sprint4_eurobot.cenital_node:main',
         ],
     },
 )

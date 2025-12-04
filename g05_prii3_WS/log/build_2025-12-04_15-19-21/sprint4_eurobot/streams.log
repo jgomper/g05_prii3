@@ -1,0 +1,27 @@
+[0.547s] Invoking command in '/home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot': PYTHONPATH=/home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build --no-deps symlink_data --force
+[0.731s] running develop
+[0.829s] running egg_info
+[0.829s] writing sprint4_eurobot.egg-info/PKG-INFO
+[0.829s] writing dependency_links to sprint4_eurobot.egg-info/dependency_links.txt
+[0.829s] writing entry points to sprint4_eurobot.egg-info/entry_points.txt
+[0.829s] writing requirements to sprint4_eurobot.egg-info/requires.txt
+[0.830s] writing top-level names to sprint4_eurobot.egg-info/top_level.txt
+[0.853s] reading manifest file 'sprint4_eurobot.egg-info/SOURCES.txt'
+[0.854s] writing manifest file 'sprint4_eurobot.egg-info/SOURCES.txt'
+[0.884s] running build_ext
+[0.884s] Creating /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/site.py
+[0.886s] Creating /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4-eurobot.egg-link (link to .)
+[0.887s] 
+[0.887s] Installed /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot
+[0.887s] running symlink_data
+[0.887s] symbolically linking /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/resource/sprint4_eurobot -> /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/ament_index/resource_index/packages
+[0.888s] symbolically linking /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/package.xml -> /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot
+[0.888s] symbolically linking /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/launch/eurobot_launch.py -> /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/launch
+[0.888s] symbolically linking /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/world/eurobot.world -> /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/world
+[0.888s] symbolically linking /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/materials/scripts/eurobot.material -> /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/scripts
+[0.888s] symbolically linking /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/materials/textures/mapa_eurobot_rotated.png -> /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/textures
+[0.888s] symbolically linking /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/materials/textures/aruco_origin.png -> /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/textures
+[0.888s] symbolically linking /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/materials/textures/aruco_robot.png -> /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/textures
+[0.888s] symbolically linking /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/models/waffle_aruco/model.sdf -> /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/models/waffle_aruco
+[0.889s] symbolically linking /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/models/waffle_aruco/model.config -> /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/models/waffle_aruco
+[0.916s] Invoked command in '/home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot' returned '0': PYTHONPATH=/home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/david/Escritorio/UPV/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build --no-deps symlink_data --force
