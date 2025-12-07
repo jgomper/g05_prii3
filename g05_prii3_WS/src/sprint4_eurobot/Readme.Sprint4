@@ -1,0 +1,25 @@
+			       ---------Preparar entorno------
+Nivel workspace->
+
+colcon build --symlink-install
+
+
+
+
+                         -------Lanzar la Simulación (Gazebo + Robot)------
+source install/setup.bash                      
+ros2 launch sprint4_eurobot eurobot_launch.py
+
+
+
+
+		     ----------Ejecutar el Nodo de Visión (Cámara Cenital)--------
+source install/setup.bash
+ros2 run sprint4_eurobot cenital_node
+
+
+
+
+		             ---------Abrir RViz (Visualización)---------
+source install/setup.bash		             
+ros2 launch sprint4_eurobot eurobot_rviz_launch.py
