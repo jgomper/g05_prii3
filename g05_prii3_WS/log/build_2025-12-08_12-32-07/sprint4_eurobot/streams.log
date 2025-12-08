@@ -1,0 +1,44 @@
+[0.461s] Invoking command in '/home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot': PYTHONPATH=/home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build --no-deps symlink_data
+[0.621s] running develop
+[0.706s] running egg_info
+[0.706s] creating sprint4_eurobot.egg-info
+[0.706s] writing sprint4_eurobot.egg-info/PKG-INFO
+[0.706s] writing dependency_links to sprint4_eurobot.egg-info/dependency_links.txt
+[0.706s] writing entry points to sprint4_eurobot.egg-info/entry_points.txt
+[0.706s] writing requirements to sprint4_eurobot.egg-info/requires.txt
+[0.706s] writing top-level names to sprint4_eurobot.egg-info/top_level.txt
+[0.707s] writing manifest file 'sprint4_eurobot.egg-info/SOURCES.txt'
+[0.727s] reading manifest file 'sprint4_eurobot.egg-info/SOURCES.txt'
+[0.728s] writing manifest file 'sprint4_eurobot.egg-info/SOURCES.txt'
+[0.752s] running build_ext
+[0.752s] Creating /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/site.py
+[0.753s] Creating /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4-eurobot.egg-link (link to .)
+[0.754s] Installing cenital_node script to /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/sprint4_eurobot
+[0.754s] Installing visual_navigator script to /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/sprint4_eurobot
+[0.754s] 
+[0.754s] Installed /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot
+[0.755s] running symlink_data
+[0.755s] creating /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/ament_index
+[0.755s] creating /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/ament_index/resource_index
+[0.755s] creating /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/ament_index/resource_index/packages
+[0.755s] symbolically linking /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/resource/sprint4_eurobot -> /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/ament_index/resource_index/packages
+[0.755s] symbolically linking /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/package.xml -> /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot
+[0.755s] creating /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/launch
+[0.755s] symbolically linking /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/launch/eurobot_launch.py -> /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/launch
+[0.756s] symbolically linking /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/launch/eurobot_rviz_launch.py -> /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/launch
+[0.756s] creating /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/world
+[0.756s] symbolically linking /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/world/eurobot.world -> /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/world
+[0.756s] creating /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/rviz
+[0.756s] symbolically linking /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/rviz/eurobot.rviz -> /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/rviz
+[0.756s] creating /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials
+[0.756s] creating /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/scripts
+[0.756s] symbolically linking /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/materials/scripts/eurobot.material -> /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/scripts
+[0.756s] creating /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/textures
+[0.756s] symbolically linking /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/materials/textures/mapa_eurobot_rotated.png -> /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/textures
+[0.756s] symbolically linking /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/materials/textures/aruco_origin.png -> /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/textures
+[0.757s] symbolically linking /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/materials/textures/aruco_robot.png -> /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/textures
+[0.757s] creating /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/models
+[0.757s] creating /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/models/waffle_aruco
+[0.757s] symbolically linking /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/models/waffle_aruco/model.config -> /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/models/waffle_aruco
+[0.757s] symbolically linking /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/models/waffle_aruco/model.sdf -> /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/models/waffle_aruco
+[0.776s] Invoked command in '/home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot' returned '0': PYTHONPATH=/home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/isaac/Tercero/Proyecto/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build --no-deps symlink_data

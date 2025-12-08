@@ -37,6 +37,7 @@ setup(
         'console_scripts': [
             # AQUÍ ESTÁ EL CAMBIO CLAVE:
             'cenital_node = sprint4_eurobot.cenital_node:main',
+            'visual_navigator = sprint4_eurobot.visual_navigator:main',
         ],
     },
 )
