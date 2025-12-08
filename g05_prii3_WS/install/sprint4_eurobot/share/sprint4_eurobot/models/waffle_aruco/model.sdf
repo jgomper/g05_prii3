@@ -1,1 +1,31 @@
-/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/models/waffle_aruco/model.sdf
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="waffle_aruco">
+    <include>
+      <uri>model://turtlebot3_waffle</uri>
+    </include>
+
+    <joint name="aruco_joint" type="fixed">
+      <parent>turtlebot3_waffle::base_footprint</parent>
+      <child>aruco_box</child>
+      <pose>0 0 0.25 0 0 0</pose>
+    </joint>
+
+    <link name="aruco_box">
+      <pose>0 0 0.25 0 0 0</pose>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.1 0.1 0.001</size>
+          </box>
+        </geometry>
+        <material>
+          <script>
+            <uri>file://materials/scripts/eurobot.material</uri>
+            <name>Eurobot/ArucoRobot</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

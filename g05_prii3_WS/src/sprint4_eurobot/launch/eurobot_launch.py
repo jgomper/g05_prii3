@@ -9,7 +9,7 @@ def generate_launch_description():
     package_name = 'sprint4_eurobot'
     pkg_share = get_package_share_directory(package_name)
     world_file = os.path.join(pkg_share, 'world', 'eurobot.world')
-    rviz_config_file = os.path.join(pkg_share, 'rviz', 'eurobot.rviz') # Asumimos que existe
+    rviz_config_file = os.path.join(pkg_share, 'rviz', 'eurobot_config.rviz') # Configuración personalizada
 
     # --- CORRECCIÓN IMPORTANTE ---
     # Si la variable ya existe, añadimos nuestra ruta al final.
