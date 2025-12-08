@@ -1,0 +1,57 @@
+running egg_info
+creating ../../build/sprint4_eurobot/sprint4_eurobot.egg-info
+writing ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/PKG-INFO
+writing dependency_links to ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/dependency_links.txt
+writing entry points to ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/entry_points.txt
+writing requirements to ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/requires.txt
+writing top-level names to ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/top_level.txt
+writing manifest file '../../build/sprint4_eurobot/sprint4_eurobot.egg-info/SOURCES.txt'
+reading manifest file '../../build/sprint4_eurobot/sprint4_eurobot.egg-info/SOURCES.txt'
+writing manifest file '../../build/sprint4_eurobot/sprint4_eurobot.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot
+copying sprint4_eurobot/__init__.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot
+copying sprint4_eurobot/cenital_node.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot
+copying sprint4_eurobot/visual_navigator.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot
+running install
+running install_lib
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot
+copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot/__init__.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot
+copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot/cenital_node.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot
+copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot/visual_navigator.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot
+byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot/cenital_node.py to cenital_node.cpython-38.pyc
+byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot/visual_navigator.py to visual_navigator.cpython-38.pyc
+running install_data
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/ament_index
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/ament_index/resource_index
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/ament_index/resource_index/packages
+copying resource/sprint4_eurobot -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/ament_index/resource_index/packages
+copying package.xml -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/launch
+copying launch/eurobot_launch.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/launch
+copying launch/eurobot_rviz_launch.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/launch
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/world
+copying world/eurobot.world -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/world
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/rviz
+copying rviz/eurobot.rviz -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/rviz
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/scripts
+copying materials/scripts/eurobot.material -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/scripts
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/textures
+copying materials/textures/mapa_eurobot_rotated.png -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/textures
+copying materials/textures/aruco_origin.png -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/textures
+copying materials/textures/aruco_robot.png -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/textures
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/models
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/models/waffle_aruco
+copying models/waffle_aruco/model.config -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/models/waffle_aruco
+copying models/waffle_aruco/model.sdf -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/models/waffle_aruco
+running install_egg_info
+Copying ../../build/sprint4_eurobot/sprint4_eurobot.egg-info to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot-0.0.0-py3.8.egg-info
+running install_scripts
+Installing cenital_node script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/sprint4_eurobot
+Installing visual_navigator script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/sprint4_eurobot
+writing list of installed files to '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/install.log'

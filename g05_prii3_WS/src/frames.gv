@@ -1,0 +1,8 @@
+digraph G {
+"odom" -> "turtlebot3_waffle::base_footprint"[label=" Broadcaster: default_authority\nAverage rate: 29.61\nBuffer length: 5.032\nMost recent transform: 90.509\nOldest transform: 85.477\n"];
+"aruco_1" -> "robot_visual_link"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1765209746.4759939"[ shape=plaintext ] ;
+}->"aruco_1";
+}

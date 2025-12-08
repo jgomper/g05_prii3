@@ -1,6 +1,13 @@
 package.xml
 setup.cfg
 setup.py
+../../build/sprint4_eurobot/sprint4_eurobot.egg-info/PKG-INFO
+../../build/sprint4_eurobot/sprint4_eurobot.egg-info/SOURCES.txt
+../../build/sprint4_eurobot/sprint4_eurobot.egg-info/dependency_links.txt
+../../build/sprint4_eurobot/sprint4_eurobot.egg-info/entry_points.txt
+../../build/sprint4_eurobot/sprint4_eurobot.egg-info/requires.txt
+../../build/sprint4_eurobot/sprint4_eurobot.egg-info/top_level.txt
+../../build/sprint4_eurobot/sprint4_eurobot.egg-info/zip-safe
 launch/eurobot_launch.py
 launch/eurobot_rviz_launch.py
 materials/scripts/eurobot.material

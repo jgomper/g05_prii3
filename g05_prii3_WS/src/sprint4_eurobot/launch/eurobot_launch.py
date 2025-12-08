@@ -45,10 +45,27 @@ def generate_launch_description():
             arguments=[
                 '-entity', 'turtlebot3_waffle',
                 '-file', os.path.join(pkg_share, 'models', 'waffle_aruco', 'model.sdf'),
-                '-x', '-1.0',
-                '-y', '0.2',
-                '-z', '0.01'
+                '-x', '0.9',
+                '-y', '0.8',
+                '-z', '0.01',
+                '-Y', '-1.57'
             ],
             output='screen'
         ),
+
+        # --- PUENTE TF VISUAL ---
+        Node(
+            package='tf2_ros',
+            executable='static_transform_publisher',
+            arguments = ['0', '0', '0', '1.5708', '0', '0', 'aruco_1', 'robot_visual_link'],
+            output='screen'
+        ),
+
+        # --- NODO DE VISIÓN (CENITAL) ---
+        Node(
+            package='sprint4_eurobot',
+            executable='cenital_node',
+            output='screen'
+        ),
+
     ])
