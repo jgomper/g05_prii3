@@ -1,13 +1,15 @@
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import ExecuteProcess
+from launch.actions import ExecuteProcess, DeclareLaunchArgument
+from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
 def generate_launch_description():
     package_name = 'sprint4_eurobot'
     pkg_share = get_package_share_directory(package_name)
     world_file = os.path.join(pkg_share, 'world', 'eurobot.world')
+    rviz_config_file = os.path.join(pkg_share, 'rviz', 'eurobot.rviz') # Asumimos que existe
 
     # --- CORRECCIÓN IMPORTANTE ---
     # Si la variable ya existe, añadimos nuestra ruta al final.
@@ -33,12 +35,23 @@ def generate_launch_description():
     else:
         os.environ['GAZEBO_MODEL_PATH'] = turtlebot3_models_path
 
+    # --- ARGUMENTOS DE LANZAMIENTO ---
+    target_arg = DeclareLaunchArgument(
+        'target',
+        default_value='22',
+        description='ID del ArUco objetivo para la navegación (20, 21, 22, 23)'
+    )
+
     return LaunchDescription([
+        target_arg,
+
+        # 1. GAZEBO
         ExecuteProcess(
             cmd=['gazebo', '--verbose', world_file, '-s', 'libgazebo_ros_init.so', '-s', 'libgazebo_ros_factory.so'],
             output='screen'
         ),
 
+        # 2. SPAWN ROBOT
         Node(
             package='gazebo_ros',
             executable='spawn_entity.py',
@@ -53,7 +66,7 @@ def generate_launch_description():
             output='screen'
         ),
 
-        # --- PUENTE TF VISUAL ---
+        # 3. PUENTE TF VISUAL
         Node(
             package='tf2_ros',
             executable='static_transform_publisher',
@@ -61,11 +74,27 @@ def generate_launch_description():
             output='screen'
         ),
 
-        # --- NODO DE VISIÓN (CENITAL) ---
+        # 4. NODO DE VISIÓN (CENITAL)
         Node(
             package='sprint4_eurobot',
             executable='cenital_node',
             output='screen'
         ),
 
+        # 5. RVIZ2
+        Node(
+            package='rviz2',
+            executable='rviz2',
+            name='rviz2',
+            arguments=['-d', rviz_config_file],
+            output='screen'
+        ),
+
+        # 6. NODO DE NAVEGACIÓN (VISUAL NAVIGATOR)
+        Node(
+            package='sprint4_eurobot',
+            executable='visual_navigator',
+            output='screen',
+            arguments=[LaunchConfiguration('target')]
+        ),
     ])

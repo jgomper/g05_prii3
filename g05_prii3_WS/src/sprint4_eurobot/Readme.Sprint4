@@ -17,20 +17,24 @@ Este comando lanza:
 - RViz (visualización).
 
 ```bash
-# En la Terminal 1
-source install/setup.bash
+                      -------------------- En la Terminal 1
+source ~/Proyecto_III/g05_prii3/g05_prii3_WS/install/setup.bash
 ros2 launch sprint4_eurobot eurobot_launch.py
 ```
 
-## 3. Ejecutar Navegación Visual
-Una vez la simulación esté lista, abre una **nueva terminal** y ejecuta el navegador indicando el ID del marcador objetivo (20, 21, 22 o 23).
+
 
 ```bash
-# En la Terminal 2
+                      -------------------- En la Terminal 2
 source ~/Proyecto_III/g05_prii3/g05_prii3_WS/install/setup.bash
 ros2 run sprint4_eurobot visual_navigator 22
 ```
+                     ---------------------Launch Unificado---------------------
 
-### Notas
+ros2 launch sprint4_eurobot eurobot_launch.py target:=20
+ros2 launch sprint4_eurobot eurobot_launch.py target:=21
+ros2 launch sprint4_eurobot eurobot_launch.py target:=22
+ros2 launch sprint4_eurobot eurobot_launch.py target:=23
+
 - **IDs Válidos**: 20, 21, 22, 23.
-- Si el robot no se mueve, asegúrate de que la cámara cenital ve el marcador del robot (ID 1).
+-
