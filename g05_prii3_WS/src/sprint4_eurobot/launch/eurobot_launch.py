@@ -1,4 +1,5 @@
 import os
+import random
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import ExecuteProcess, DeclareLaunchArgument
@@ -58,8 +59,8 @@ def generate_launch_description():
             arguments=[
                 '-entity', 'turtlebot3_waffle',
                 '-file', os.path.join(pkg_share, 'models', 'waffle_aruco', 'model.sdf'),
-                '-x', '0.9',
-                '-y', '0.8',
+                '-x', str(random.uniform(-1.3, 1.3)),
+                '-y', str(random.uniform(-0.8, 0.8)),
                 '-z', '0.01',
                 '-Y', '-1.57'
             ],
