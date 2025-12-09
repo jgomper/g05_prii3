@@ -43,6 +43,16 @@ def generate_launch_description():
         description='ID del ArUco objetivo para la navegación (20, 21, 22, 23)'
     )
 
+    # --- RANDOM SPAWN LOGIC ---
+    # Límites del tablero (aprox 3x2m) con margen de seguridad
+    # X: [-1.35, 1.35]
+    # Y: [-0.85, 0.85]
+    rand_x = random.uniform(-1.35, 1.35)
+    rand_y = random.uniform(-0.85, 0.85)
+    rand_yaw = random.uniform(-3.14, 3.14)
+    print(f"--- SPAWNING ROBOT AT: X={rand_x:.2f}, Y={rand_y:.2f}, YAW={rand_yaw:.2f} ---")
+    # --------------------------
+
     return LaunchDescription([
         target_arg,
 
@@ -52,17 +62,18 @@ def generate_launch_description():
             output='screen'
         ),
 
-        # 2. SPAWN ROBOT
+        # 2. SPAWN ROBOT (RANDOM POSE)
+
         Node(
             package='gazebo_ros',
             executable='spawn_entity.py',
             arguments=[
                 '-entity', 'turtlebot3_waffle',
                 '-file', os.path.join(pkg_share, 'models', 'waffle_aruco', 'model.sdf'),
-                '-x', str(random.uniform(-1.3, 1.3)),
-                '-y', str(random.uniform(-0.8, 0.8)),
+                '-x', str(rand_x),
+                '-y', str(rand_y),
                 '-z', '0.01',
-                '-Y', '-1.57'
+                '-Y', str(rand_yaw)
             ],
             output='screen'
         ),

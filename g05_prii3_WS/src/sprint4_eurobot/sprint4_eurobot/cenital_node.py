@@ -28,7 +28,17 @@ class CenitalCameraNode(Node):
             # Fallback a lo viejo (OpenCV < 4.7)
             self.aruco_dict = cv2.aruco.Dictionary_get(cv2.aruco.DICT_4X4_50)
             self.aruco_params = cv2.aruco.DetectorParameters_create()
-            self.get_logger().info('Usando API Antigua (<4.7)')
+            
+            # --- MEJORA DE ROBUSTEZ ---
+            # Ajustes para detectar marcadores más pequeños o lejanos
+            self.aruco_params.adaptiveThreshWinSizeMin = 3
+            self.aruco_params.adaptiveThreshWinSizeMax = 30
+            self.aruco_params.adaptiveThreshWinSizeStep = 5
+            self.aruco_params.cornerRefinementMethod = cv2.aruco.CORNER_REFINE_SUBPIX
+            self.aruco_params.minMarkerPerimeterRate = 0.02 # Detectar marcadores más pequeños
+            # --------------------------
+
+            self.get_logger().info('Usando API Antigua (<4.7) con Parámetros Mejorados')
 
         # Puntos 3D del marcador (para solvePnP)
         half = self.marker_size / 2.0

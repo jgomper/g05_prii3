@@ -85,20 +85,33 @@ class VisualNavigator(Node):
         # --- 3. LOG UNIFICADO ---
         self.get_logger().info(f"{loc_str} | {nav_str}", throttle_duration_sec=0.5)
 
-        # --- 4. LÓGICA DE CONTROL ---
-        if not target_visible:
-            if self.missed_frames < 5:
-                return # Mantener inercia
-            else:
-                self.publisher.publish(msg) # Parada total
-                return
+        # --- 4. FILTRO DE VISIÓN PERDIDA (SEGURIDAD) ---
+        # Si la TF es vieja (> 0.5s), nos detenemos por seguridad.
+        try:
+            # Verificamos la "frescura" de la transformación
+            # Nota: lookup_transform ya nos da la última disponible, pero podemos chequear el tiempo
+            # Si ha pasado mucho tiempo desde la última actualización del buffer, es peligroso.
+            # En esta implementación simple, usamos 'missed_frames' como proxy de tiempo.
+            if not target_visible:
+                if self.missed_frames > 5: # Aprox 0.5 segundos (a 10Hz)
+                    self.get_logger().warn("⚠️ Visión inestable - Esperando...")
+                    self.publisher.publish(msg) # Parada total (0,0)
+                    return
+                else:
+                    return # Mantenemos inercia brevemente (o paramos si preferimos seguridad total)
+        except Exception:
+            self.publisher.publish(msg)
+            return
 
-        # 5. LÓGICA DE CONTROL SUAVE (SMOOTH PROPORTIONAL)
-        K_ANGULAR = 0.8
-        K_LINEAR_MAX = 0.3
-        ANGULO_LIMITE = 0.5
+        # --- 5. LÓGICA DE CONTROL ROBUSTA (ANTI-LOCURA) ---
+        # Constantes
+        KP_ANGULAR = 0.8
+        MAX_ANGULAR_VEL = 0.5  # CLAMP CRÍTICO
+        
+        MAX_LINEAR_VEL = 0.2   # Velocidad suave
+        ANGULO_TOLERANCIA_AVANCE = 0.2 # Radianes
 
-        # CASO DE LLEGADA
+        # A. CASO DE LLEGADA
         if distancia < 0.20:
             self.get_logger().info(f"¡Llegada al objetivo {self.target_id}! Deteniendo.")
             msg.linear.x = 0.0
@@ -106,18 +119,22 @@ class VisualNavigator(Node):
             self.publisher.publish(msg)
             raise SystemExit
 
-        # VELOCIDAD ANGULAR
-        msg.angular.z = K_ANGULAR * angulo
-        msg.angular.z = max(min(msg.angular.z, 1.5), -1.5)
+        # B. CÁLCULO DE GIRO (CON CLAMP)
+        giro_deseado = KP_ANGULAR * angulo
+        # Saturación (Clamp)
+        msg.angular.z = max(min(giro_deseado, MAX_ANGULAR_VEL), -MAX_ANGULAR_VEL)
 
-        # VELOCIDAD LINEAL
-        if abs(angulo) > ANGULO_LIMITE:
+        # C. FASES DE MOVIMIENTO
+        if abs(angulo) > ANGULO_TOLERANCIA_AVANCE:
+            # FASE DE GIRO PURO
             msg.linear.x = 0.0
+            # El angular ya está seteado y limitado arriba
         else:
-            factor_reduccion = 1.0 - (abs(angulo) / ANGULO_LIMITE)
-            msg.linear.x = K_LINEAR_MAX * distancia * factor_reduccion
-            msg.linear.x = min(msg.linear.x, K_LINEAR_MAX)
-            msg.linear.x = max(msg.linear.x, 0.0)
+            # FASE DE AVANCE (CON CORRECCIÓN SUAVE)
+            msg.linear.x = MAX_LINEAR_VEL
+            
+            # Limitamos aún más el giro mientras avanzamos para evitar "eses"
+            msg.angular.z = max(min(msg.angular.z, 0.3), -0.3)
 
         self.publisher.publish(msg)
 
