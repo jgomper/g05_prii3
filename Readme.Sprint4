@@ -3,10 +3,21 @@
 ## 1. Preparar el Entorno (Compilar)
 Es necesario compilar el workspace para aplicar los cambios en los launch files y scripts.
 ```bash
-cd ~/Proyecto_III/g05_prii3/g05_prii3_WS
+cd g05_prii3_WS
 colcon build --symlink-install
 source install/setup.bash
 ```
+
+                     ---------------------Launch Unificado---------------------
+
+ros2 launch sprint4_eurobot eurobot_launch.py target:=20
+ros2 launch sprint4_eurobot eurobot_launch.py target:=21
+ros2 launch sprint4_eurobot eurobot_launch.py target:=22
+ros2 launch sprint4_eurobot eurobot_launch.py target:=23
+
+- **IDs Válidos**: 20, 21, 22, 23.
+
+                 ----------------Comandos para ejecutar por separado--------
 
 ## 2. Lanzar la Simulación Completa
 Este comando lanza:
@@ -29,12 +40,4 @@ ros2 launch sprint4_eurobot eurobot_launch.py
 source ~/Proyecto_III/g05_prii3/g05_prii3_WS/install/setup.bash
 ros2 run sprint4_eurobot visual_navigator 22
 ```
-                     ---------------------Launch Unificado---------------------
 
-ros2 launch sprint4_eurobot eurobot_launch.py target:=20
-ros2 launch sprint4_eurobot eurobot_launch.py target:=21
-ros2 launch sprint4_eurobot eurobot_launch.py target:=22
-ros2 launch sprint4_eurobot eurobot_launch.py target:=23
-
-- **IDs Válidos**: 20, 21, 22, 23.
--
