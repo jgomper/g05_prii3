@@ -31,7 +31,7 @@ class RealNavigatorJSON(Node):
                 lambda msg, tid=tid: self.aruco_cb(msg, tid), 10)
 
         self.pub = self.create_publisher(Twist, 'cmd_vel', 10)
-        self.timer = self.create_timer(0.1, self.control_loop)
+        self.timer = self.create_timer(0.03, self.control_loop)
         
         self.get_logger().info(f"--- NAVEGADOR JSON DEGUB (I3L7) ---")
         self.get_logger().info(f"Namespace: {self.get_namespace()}")
@@ -40,12 +40,12 @@ class RealNavigatorJSON(Node):
 
         # Constantes de Control (Ajustadas para 1 Hz - LENTAS compaginando lag)
         self.TOL_DIST = 20.0  # MÁS PRECISO (Antes 40.0)
-        self.TOL_ANG = 0.15 
-        self.KP_ANG = 0.6     # Un poco más reactivo
+        self.TOL_ANG = 0.25   # MÁS PERMISIVO (Antes 0.15) -> Menos giros bruscos
+        self.KP_ANG = 0.8     # SUAVIZADO (Antes 1.0)
         self.KP_LIN = 0.002
-        self.MAX_W = 0.4      
+        self.MAX_W = 0.5      
         self.MAX_V = 0.15
-        self.MIN_W = 0.08     # SUAVIZADO (Antes 0.15) para evitar "baile"
+        self.MIN_W = 0.2      # REDUCIDO (Antes 0.3) -> Menor "patada" inicial
         self.DATA_TIMEOUT = 2.0
 
     def aruco_cb(self, msg, tid):
@@ -77,11 +77,11 @@ class RealNavigatorJSON(Node):
             self.pub.publish(msg)
             return
 
-        # --- PULSE CONTROL (Anti-Overshoot para 1 Hz) ---
-        # Si el dato tiene más de 0.3s, asumimos que ya hemos reaccionado a él y PARAMOS.
-        # Esto evita estar 1 segundo girando a ciegas.
+        # --- PULSE CONTROL (Anti-Overshoot) ---
+        # A 3 Hz (dato cada 0.33s), si ponemos 0.5s damos margen para FLUIDEZ.
+        # Si no llega dato en 0.5s, paramos por seguridad.
         time_since_update = time.time() - robot['last_seen']
-        if time_since_update > 0.3:
+        if time_since_update > 0.5:
              # Mandar ceros para frenar
              self.pub.publish(msg) 
              return
