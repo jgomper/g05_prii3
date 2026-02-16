@@ -63,12 +63,26 @@ class RealNavigatorJSON(Node):
                 # Si es > 2*PI (aprox 7), asumimos GRADOS y convertimos a RADIANES
                 orientation = math.radians(raw_angle) if abs(raw_angle) > 7.0 else raw_angle
 
-                self.raw[tid] = {
-                    'px': float(data.get('px', 0.0)),
-                    'py': float(data.get('py', 0.0)),
-                    'orientation': orientation,
-                    'last_seen': time.time()
-                }
+                # SI ES EL ROBOT: Actualizar siempre (lo necesitamos fresco)
+                if tid == self.robot_id:
+                    self.raw[tid] = {
+                        'px': float(data.get('px', 0.0)),
+                        'py': float(data.get('py', 0.0)),
+                        'orientation': orientation,
+                        'last_seen': time.time()
+                    }
+                
+                # SI ES EL TARGET: Actualizar SOLO si no lo tenemos ya (LATCHING / FIJAR)
+                elif tid == self.target_id:
+                    if tid not in self.raw:
+                        self.raw[tid] = {
+                            'px': float(data.get('px', 0.0)),
+                            'py': float(data.get('py', 0.0)),
+                            'orientation': orientation,
+                            'last_seen': time.time()
+                        }
+                        self.get_logger().info(f" TARGET {tid} FIJADO EN: ({self.raw[tid]['px']:.0f}, {self.raw[tid]['py']:.0f})")
+                        self.get_logger().info("   (Ignoraremos futuras actualizaciones para evitar ruido al taparlo)")
         except: pass
 
     def control_loop(self):
@@ -90,7 +104,7 @@ class RealNavigatorJSON(Node):
         if self.state == 'WAITING':
             if current_time - self.last_move_finish > 3.0: # 3 segundos de espera
                 self.state = 'IDLE' # Ya podemos volver a mirar
-                self.get_logger().info("👀 CÁMARA ACTUALIZADA - LEEYENDO...")
+                self.get_logger().info(" CÁMARA ACTUALIZADA - LEEYENDO...")
             else:
                 self.pub.publish(Twist()) # FRENAR
             return
@@ -101,7 +115,7 @@ class RealNavigatorJSON(Node):
                 self.state = 'WAITING'
                 self.last_move_finish = current_time
                 self.pub.publish(Twist()) # FRENAR
-                self.get_logger().info("🛑 PARANDO - ESPERANDO 3s...")
+                self.get_logger().info(" PARANDO - ESPERANDO 3s...")
             else:
                 # Seguir publicando la última velocidad calculada
                 self.pub.publish(self.last_cmd)
@@ -136,7 +150,7 @@ class RealNavigatorJSON(Node):
         )
 
         if dist < current_tol:
-            self.get_logger().info("✅ LLEGADA")
+            self.get_logger().info(" LLEGADA")
             self.pub.publish(msg)
             return
 
@@ -159,7 +173,7 @@ class RealNavigatorJSON(Node):
         self.state = 'MOVING'
         self.move_start_time = current_time
         self.pub.publish(msg)
-        self.get_logger().info(f"🚀 MOVIENDO (0.5s)...")
+        self.get_logger().info(f" MOVIENDO (0.5s)...")
 
 def main(args=None):
     rclpy.init(args=args)
