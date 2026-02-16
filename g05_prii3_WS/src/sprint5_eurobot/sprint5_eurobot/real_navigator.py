@@ -24,6 +24,12 @@ class RealNavigatorJSON(Node):
         self.listen_ids = [self.robot_id, self.target_id]
         self.raw = {}
         self.lock = threading.Lock()
+        
+        # Estado Move & Wait
+        self.state = 'IDLE' 
+        self.last_move_finish = 0
+        self.move_start_time = 0
+        self.last_cmd = Twist()
 
         for tid in self.listen_ids:
             topic = f'/overhead_camera/aruco_{tid}'
@@ -31,7 +37,7 @@ class RealNavigatorJSON(Node):
                 lambda msg, tid=tid: self.aruco_cb(msg, tid), 10)
 
         self.pub = self.create_publisher(Twist, 'cmd_vel', 10)
-        self.timer = self.create_timer(0.03, self.control_loop)
+        self.timer = self.create_timer(0.01, self.control_loop)
         
         self.get_logger().info(f"--- NAVEGADOR JSON DEGUB (I3L7) ---")
         self.get_logger().info(f"Namespace: {self.get_namespace()}")
@@ -43,8 +49,8 @@ class RealNavigatorJSON(Node):
         self.TOL_ANG = 0.25   # MÁS PERMISIVO (Antes 0.15) -> Menos giros bruscos
         self.KP_ANG = 0.8     # SUAVIZADO (Antes 1.0)
         self.KP_LIN = 0.002
-        self.MAX_W = 0.5      
-        self.MAX_V = 0.15
+        self.MAX_W = 1.0      # DOBLE (Antes 0.5)
+        self.MAX_V = 0.3      # DOBLE (Antes 0.15)
         self.MIN_W = 0.2      # REDUCIDO (Antes 0.3) -> Menor "patada" inicial
         self.DATA_TIMEOUT = 2.0
 
@@ -77,15 +83,33 @@ class RealNavigatorJSON(Node):
             self.pub.publish(msg)
             return
 
-        # --- PULSE CONTROL (Anti-Overshoot) ---
-        # A 3 Hz (dato cada 0.33s), si ponemos 0.5s damos margen para FLUIDEZ.
-        # Si no llega dato en 0.5s, paramos por seguridad.
-        time_since_update = time.time() - robot['last_seen']
-        if time_since_update > 0.5:
-             # Mandar ceros para frenar
-             self.pub.publish(msg) 
-             return
+        # --- ESTADO DE NAVEGACIÓN "MOVE & WAIT" (Blind Mode) ---
+        current_time = time.time()
+        
+        # 1. ESTADO WAITING (Esperar a que la cámara "alcance" a la realidad)
+        if self.state == 'WAITING':
+            if current_time - self.last_move_finish > 3.0: # 3 segundos de espera
+                self.state = 'IDLE' # Ya podemos volver a mirar
+                self.get_logger().info("👀 CÁMARA ACTUALIZADA - LEEYENDO...")
+            else:
+                self.pub.publish(Twist()) # FRENAR
+            return
 
+        # 2. ESTADO MOVING (Moverse a ciegas X tiempo)
+        if self.state == 'MOVING':
+            if current_time - self.move_start_time > 1.0: # 1.0s de movimiento
+                self.state = 'WAITING'
+                self.last_move_finish = current_time
+                self.pub.publish(Twist()) # FRENAR
+                self.get_logger().info("🛑 PARANDO - ESPERANDO 3s...")
+            else:
+                # Seguir publicando la última velocidad calculada
+                self.pub.publish(self.last_cmd)
+            return
+
+        # 3. ESTADO IDLE (Calcular nuevo movimiento)
+        # Solo entramos aquí si estamos parados y la foto es "reciente" (relativamente)
+        
         dx = target['px'] - robot['px']
         dy = target['py'] - robot['py']
         dist = math.hypot(dx, dy)
@@ -100,7 +124,7 @@ class RealNavigatorJSON(Node):
         
         error_angle = target_angle - robot_angle
         error_angle = math.atan2(math.sin(error_angle), math.cos(error_angle))
-
+        
         # DEBUG EN GRADOS
         deg_error = math.degrees(error_angle)
         deg_robot = math.degrees(robot_angle)
@@ -116,18 +140,13 @@ class RealNavigatorJSON(Node):
             self.pub.publish(msg)
             return
 
-        # FSM con Mínimos
+        # CALCULO DE VELOCIDAD
         if abs(error_angle) > self.TOL_ANG:
-             # Giro Puro (Signo Invertido por sistema de coordenadas Y-Down vs Z-Up)
              w = -1 * error_angle * self.KP_ANG
-             # Aplicar mínimo
-             if abs(w) < self.MIN_W:
-                 w = self.MIN_W if w > 0 else -self.MIN_W
-             
+             if abs(w) < self.MIN_W: w = self.MIN_W if w > 0 else -self.MIN_W
              msg.angular.z = w
              msg.linear.x = 0.0
         else:
-             # Avanzar
              msg.linear.x = dist * self.KP_LIN
              msg.angular.z = -1 * error_angle * self.KP_ANG
              
@@ -135,7 +154,12 @@ class RealNavigatorJSON(Node):
         msg.angular.z = max(min(msg.angular.z, self.MAX_W), -self.MAX_W)
         msg.linear.x = max(min(msg.linear.x, self.MAX_V), 0.0)
         
+        # INICIAR MOVIMIENTO
+        self.last_cmd = msg
+        self.state = 'MOVING'
+        self.move_start_time = current_time
         self.pub.publish(msg)
+        self.get_logger().info(f"🚀 MOVIENDO (0.5s)...")
 
 def main(args=None):
     rclpy.init(args=args)
