@@ -7,6 +7,8 @@ import cv2
 import numpy as np
 import tf2_ros
 from geometry_msgs.msg import TransformStamped
+from std_msgs.msg import String
+import json
 
 
 class CenitalCameraNode(Node):
@@ -56,7 +58,15 @@ class CenitalCameraNode(Node):
         self.tf_broadcaster = tf2_ros.TransformBroadcaster(self)
         self.camera_matrix = None
         self.dist_coeffs = None
-        self.get_logger().info('Nodo Cenital Listo. Esperando imagen...')
+
+        # --- SIMULACIÓN I3L7: Publicadores de Topics JSON ---
+        # IDs soportados por el lab: 3 (Robot), 8 (Ref), 20-23 (Destinos)
+        self.json_pubs = {}
+        for tid in [3, 8, 20, 21, 22, 23]:
+            topic = f'/overhead_camera/aruco_{tid}'
+            self.json_pubs[tid] = self.create_publisher(String, topic, 10)
+        
+        self.get_logger().info('Nodo Cenital Listo (Simulando I3L7 JSONs). Esperando imagen...')
 
     def info_callback(self, msg):
         if self.camera_matrix is None:
@@ -117,6 +127,33 @@ class CenitalCameraNode(Node):
                         2                          # Grosor
                     )
                     # ------------------------------------------------
+
+                    # --- SIMULACIÓN I3L7: Publicar JSON ---
+                    pub_id = marker_id
+                    
+                    if pub_id in self.json_pubs:
+                        # Calcular orientación 2D en imagen (aprox)
+                        # Usamos la resta de esquinas superiores para ver el ángulo
+                        # corners[i][0] -> [TopLeft, TopRight, BottomRight, BottomLeft]
+                        p1 = corners[i][0][0]
+                        p2 = corners[i][0][1]
+                        dx = p2[0] - p1[0]
+                        dy = p2[1] - p1[1]
+                        angle_rad = np.arctan2(dy, dx)
+                        angle_deg = np.degrees(angle_rad) # SIMULAMOS LABORATORIO (GRADOS)
+
+                        # Crear JSON
+                        data = {
+                            "id": int(pub_id),
+                            "px": float(corner_x), # Usamos la esquina como referencia simple
+                            "py": float(corner_y),
+                            "orientation": float(angle_deg)
+                        }
+                        
+                        msg_json = String()
+                        msg_json.data = json.dumps(data)
+                        self.json_pubs[pub_id].publish(msg_json)
+                    # -------------------------------------
 
                     # Publicar TF
                     self.publish_tf(rvec, tvec, f"aruco_{marker_id}")

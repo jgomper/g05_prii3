@@ -102,11 +102,5 @@ def generate_launch_description():
             output='screen'
         ),
 
-        # 6. NODO DE NAVEGACIÓN (VISUAL NAVIGATOR)
-        Node(
-            package='sprint4_eurobot',
-            executable='visual_navigator',
-            output='screen',
-            arguments=[LaunchConfiguration('target')]
-        ),
+
     ])
