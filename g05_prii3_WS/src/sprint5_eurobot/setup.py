@@ -24,6 +24,7 @@ setup(
     entry_points={
         'console_scripts': [
             'real_navigator = sprint5_eurobot.real_navigator:main',
+            'pattern_matching = sprint5_eurobot.pattern_matching:main',
         ],
     },
 )

@@ -1,0 +1,49 @@
+PATTERN MATCHING DETECTOR
+
+cd Escritorio/UPV/proyecto_3/g05_prii3/g05_prii3_WS
+
+TERMINAL 1
+----------
+rm -rf build/sprint5_eurobot install/sprint5_eurobot
+colcon build --packages-select sprint5_eurobot --symlink-install
+source install/setup.bash
+export ROS_DOMAIN_ID=1
+ros2 launch sprint5_eurobot pattern_matching_simulation_launch.py
+
+
+
+TERMINAL 2
+----------
+source install/setup.bash
+export ROS_DOMAIN_ID=1
+ros2 run sprint5_eurobot pattern_matching
+
+
+COSAS POR HACER / ENVIAR AL CHAT
+--------------------------------
+sigue sin dejar entrar a ver la imagen de la camara cenital con el pattern matching hecho, aparte, solo salen 8, si funciona, mirar cuales son los que no ve e intentar arreglarlo
+
+
+TEORIA DE PREGUNTAS
+-------------------
+
+Sí, el código utiliza exactamente una de las técnicas que aparecen en tu primera foto. Estamos usando:
+
+Tipo: Basado en plantillas (Template Matching).
+Método Específico: Correlación Cruzada Normalizada (CCN).
+En el código (pattern_matching.py) la línea clave es esta:
+
+```
+result = cv2.matchTemplate(resized_mask, template, cv2.TM_CCOEFF_NORMED)
+```
+TM_CCOEFF_NORMED significa Template Matching - Correlation Coefficient - Normed.
+¿Por qué usamos esta y no las otras?
+
+Normalizada (Normed): Al ser normalizada (el valor va de -1 a 1), es mucho más robusta a cambios de iluminación. Si en Gazebo cambia la luz o hay sombras, la detección sigue funcionando porque le importa la forma relativa, no la intensidad absoluta de los píxeles.
+
+Basado en Plantillas: Como buscamos una forma geométrica muy concreta (un cuadrado con marco negro) que sabíamos dibujar de antemano, el template matching es más rápido y fácil de controlar que entrenar una red neuronal (IA) para algo tan simple.
+
+Además, le hemos añadido dos "superpoderes" que no vienen de serie en la función básica:
+	Multi-Scale: Para que detecte los almacenes pequeños y grandes (distancia).
+	Multi-Angle: Para que detecte los que están rotados.
+

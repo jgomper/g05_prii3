@@ -1,4 +1,12 @@
+ros2 topic echo /overhead_camera/aruco_23
+
+
+
+
 --------------------Terminal para conectarse al robot
+
+
+
  ping 192.168.111.83
 
  ssh -X jetbot@192.168.111.83
@@ -12,7 +20,7 @@ ros2 run jetbot_pro_ros2 jetbot
 cd ~/jetbot_ws
 source install/setup.bash
 export ROS_DOMAIN_ID=1
-ros2 launch sprint5_eurobot real_robot.launch.py robot_ns:=/ target_id:=22
+ros2 launch sprint5_eurobot real_robot.launch.py robot_ns:=/ target_id:=20
 
 -----Meter codigo en el robot 
 
@@ -41,4 +49,23 @@ ros2 launch sprint4_eurobot eurobot_launch.py
 cd ~/Proyecto_III/g05_prii3/g05_prii3_WS
 source install/setup.bash
 ros2 launch sprint4_eurobot real_nav_stack.launch.py target_id:=22
+
+------------Pattern Matching------------
+
+#ejejcutar en la camara real
+ros2 run sprint5_eurobot pattern_matching
+
+#ejecutar en gazebo
+
+ros2 launch sprint4_eurobot warehouse_detection.launch.py
+
+
+------5.1 topics-----
+
+ros2 topic list
+
+ros2 topic echo /overhead_camera/aruco_22
+
+
+
 

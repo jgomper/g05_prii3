@@ -38,6 +38,7 @@ setup(
             # AQUÍ ESTÁ EL CAMBIO CLAVE:
             'cenital_node = sprint4_eurobot.cenital_node:main',
             'real_navigator = sprint4_eurobot.real_navigator:main',
+            'pattern_matching = sprint4_eurobot.pattern_matching:main',
         ],
     },
 )
