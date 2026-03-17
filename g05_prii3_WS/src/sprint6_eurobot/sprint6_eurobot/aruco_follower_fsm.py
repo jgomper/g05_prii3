@@ -1,16 +1,3 @@
-"""
-Sprint 6 - PBI 6.1: Maquina de Estados Finitos PURA con transitions
-====================================================================
-FSM con 5 estados funcionales:
-  1. BUSCAR           - Gira buscando el ArUco 17
-  2. ACERCAR          - Avanza hacia el ArUco centrandose
-  3. GIRAR_180        - Gira 180 grados
-  4. CUADRADO_AVANZAR - Avanza un lado del cuadrado
-  5. CUADRADO_GIRAR   - Gira 90 grados
-
-Implementacion FSM PURA usando conditions de transitions.
-"""
-
 import numpy as np
 import cv2
 
@@ -24,7 +11,7 @@ from transitions import Machine
 
 
 class ArucoFollowerFSM(Node):
-    """Nodo ROS2 con FSM pura usando transitions."""
+   
 
     states = ['INIT', 'BUSCAR', 'ACERCAR', 'GIRAR_180', 
               'CUADRADO_AVANZAR', 'CUADRADO_GIRAR', 'DONE']
