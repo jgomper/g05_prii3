@@ -1,0 +1,38 @@
+=====================================================
+  SPRINT 6 - COMANDOS POR SECUENCIA
+=====================================================
+
+ping 192.168.111.83
+ssh -X jetbot@192.168.111.83
+
+export ROS_DOMAIN_ID=1
+cd ~/jetbot_ws
+source install/setup.bash
+
+ros2 launch jetbot_pro_ros2 jetbot.py
+
+╔══════════════════════════════════════════════════╗
+║     NODO 2: DETECTOR ARUCO (CÁMARA CSI)         ║
+╚══════════════════════════════════════════════════╝
+
+
+
+=== PASO 1: Copiar el paquete al robot (desde el portátil) ===
+
+scp -r ~/Proyecto_III/g05_prii3/g05_prii3_WS/src/sprint6_eurobot \
+    jetbot@192.168.111.83:~/jetbot_ws/src/
+
+=== PASO 2: Compilar el workspace (EN EL ROBOT) ===
+
+cd ~/jetbot_ws
+colcon build
+source install/setup.bash
+
+
+
+NODO-----ARUCO FOLLOWER (FSM)-----
+
+cd ~/jetbot_ws
+source install/setup.bash
+export ROS_DOMAIN_ID=1
+ros2 run sprint6_eurobot aruco_follower
