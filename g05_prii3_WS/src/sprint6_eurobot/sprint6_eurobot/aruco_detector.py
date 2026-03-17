@@ -1,11 +1,3 @@
-"""
-Sprint 6 - Detector de ArUco (Multi-diccionario + parámetros permisivos)
-=========================================================================
-Detecta cualquier marcador ArUco probando todos los diccionarios comunes.
-Muestra por terminal el ID, diccionario, posición y tamaño.
-
-Topic de entrada: /camera/image_raw
-"""
 
 import numpy as np
 import cv2
@@ -23,26 +15,26 @@ class ArucoDetectorNode(Node):
 
         self.declare_parameter('image_topic', '/camera/image_raw')
         self.declare_parameter('target_id', 17)
-        self.declare_parameter('min_size', 25)  # Tamaño mínimo en px para evitar falsos positivos
+        self.declare_parameter('min_size', 25)  
         image_topic = self.get_parameter('image_topic').value
         self._target_id = self.get_parameter('target_id').value
         self._min_size = self.get_parameter('min_size').value
 
-        # Parámetros de detección (más estrictos para evitar falsos positivos)
+        
         try:
             params = cv2.aruco.DetectorParameters()
         except AttributeError:
             params = cv2.aruco.DetectorParameters_create()
 
         params.adaptiveThreshConstant       = 7
-        params.minMarkerPerimeterRate       = 0.03   # más estricto (antes 0.01)
+        params.minMarkerPerimeterRate       = 0.03   
         params.maxMarkerPerimeterRate       = 4.0
-        params.polygonalApproxAccuracyRate  = 0.03   # más estricto (antes 0.05)
-        params.minCornerDistanceRate        = 0.05   # más estricto (antes 0.01)
-        params.minDistanceToBorder          = 3      # más estricto (antes 1)
+        params.polygonalApproxAccuracyRate  = 0.03   
+        params.minCornerDistanceRate        = 0.05  
+        params.minDistanceToBorder          = 3      
         params.cornerRefinementMethod       = cv2.aruco.CORNER_REFINE_SUBPIX
 
-        # Todos los diccionarios a probar
+      
         dict_ids = {
             'ARUCO_ORIGINAL': cv2.aruco.DICT_ARUCO_ORIGINAL,
             '4X4_50':  cv2.aruco.DICT_4X4_50,
@@ -63,7 +55,7 @@ class ArucoDetectorNode(Node):
                     d = cv2.aruco.Dictionary_get(did)
                 self._detectors[name] = (d, params)
             except Exception:
-                pass  # ignorar si el diccionario no existe en esta versión de OpenCV
+                pass  
 
         from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy
         qos = QoSProfile(
@@ -92,7 +84,7 @@ class ArucoDetectorNode(Node):
             elif msg.encoding == 'mono8':
                 frame = cv2.cvtColor(frame, cv2.COLOR_GRAY2BGR)
 
-            # Ecualizar histograma para mejorar contraste
+            
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
             gray = cv2.equalizeHist(gray)
 
@@ -104,23 +96,23 @@ class ArucoDetectorNode(Node):
                 if ids is not None:
                     for i, marker_id in enumerate(ids.flatten()):
                         if marker_id != self._target_id:
-                            continue  # Solo reaccionar al target_id (17)
+                            continue  
                         pts = corners[i][0]
                         cx  = float((pts[0][0] + pts[2][0]) / 2.0)
                         cy  = float((pts[0][1] + pts[2][1]) / 2.0)
                         w   = float(abs(pts[1][0] - pts[0][0]))
-                        # Filtrar falsos positivos por tamaño mínimo
+                       
                         if w < self._min_size:
                             continue
                         found_any = True
                         self.get_logger().info(
-                            f'  ✅ [{dict_name}] ID={marker_id}  '
+                            f'  [{dict_name}] ID={marker_id}  '
                             f'cx={cx:.0f}  cy={cy:.0f}  w={w:.0f}px'
                         )
 
             if not found_any:
                 self.get_logger().info(
-                    f'  ❌ Nada detectado  (encoding={msg.encoding} '
+                    f'  Nada detectado  (encoding={msg.encoding} '
                     f'{msg.width}x{msg.height})',
                     throttle_duration_sec=2.0
                 )

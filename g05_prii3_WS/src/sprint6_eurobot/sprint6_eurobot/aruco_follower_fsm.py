@@ -26,24 +26,19 @@ from transitions import Machine
 class ArucoFollowerFSM(Node):
     """Nodo ROS2 con FSM pura usando transitions."""
 
-    # =====================================================================
-    # DEFINICION DE ESTADOS (5 funcionales + INIT + DONE)
-    # =====================================================================
     states = ['INIT', 'BUSCAR', 'ACERCAR', 'GIRAR_180', 
               'CUADRADO_AVANZAR', 'CUADRADO_GIRAR', 'DONE']
 
-    # =====================================================================
-    # DEFINICION DE TRANSICIONES (FSM pura con conditions)
-    # =====================================================================
+ 
     transitions = [
-        # INIT -> BUSCAR (arranque)
+       
         {
             'trigger': 'start',
             'source': 'INIT',
             'dest': 'BUSCAR',
             'after': 'on_enter_buscar'
         },
-        # BUSCAR -> ACERCAR (cuando detecta ArUco)
+        
         {
             'trigger': 'check',
             'source': 'BUSCAR',
@@ -51,7 +46,7 @@ class ArucoFollowerFSM(Node):
             'conditions': 'is_aruco_detected',
             'after': 'on_enter_acercar'
         },
-        # ACERCAR -> GIRAR_180 (cuando ArUco es grande = cerca)
+        
         {
             'trigger': 'check',
             'source': 'ACERCAR',
@@ -59,7 +54,7 @@ class ArucoFollowerFSM(Node):
             'conditions': 'is_close_enough',
             'after': 'on_enter_girar_180'
         },
-        # GIRAR_180 -> CUADRADO_AVANZAR (giro completado)
+       
         {
             'trigger': 'check',
             'source': 'GIRAR_180',
@@ -67,7 +62,7 @@ class ArucoFollowerFSM(Node):
             'conditions': 'is_giro_180_done',
             'after': 'on_enter_cuadrado_avanzar'
         },
-        # CUADRADO_AVANZAR -> CUADRADO_GIRAR (lado completado)
+        
         {
             'trigger': 'check',
             'source': 'CUADRADO_AVANZAR',
@@ -75,7 +70,7 @@ class ArucoFollowerFSM(Node):
             'conditions': 'is_lado_done',
             'after': 'on_enter_cuadrado_girar'
         },
-        # CUADRADO_GIRAR -> CUADRADO_AVANZAR (continuar cuadrado)
+       
         {
             'trigger': 'check',
             'source': 'CUADRADO_GIRAR',
@@ -83,7 +78,7 @@ class ArucoFollowerFSM(Node):
             'conditions': ['is_giro_90_done', 'is_cuadrado_incompleto'],
             'after': 'on_enter_cuadrado_avanzar'
         },
-        # CUADRADO_GIRAR -> DONE (cuadrado completo)
+        
         {
             'trigger': 'check',
             'source': 'CUADRADO_GIRAR',
@@ -96,9 +91,7 @@ class ArucoFollowerFSM(Node):
     def __init__(self):
         super().__init__('aruco_follower_fsm')
 
-        # -----------------------------------------------------------------
-        # Parametros configurables
-        # -----------------------------------------------------------------
+      
         self.declare_parameter('image_topic', '/camera/image_raw')
         self.declare_parameter('target_id', 17)
         self.declare_parameter('min_size', 25)
@@ -121,18 +114,14 @@ class ArucoFollowerFSM(Node):
         self._lado_duracion = self.get_parameter('lado_duracion').value
         self._image_width = self.get_parameter('image_width').value
 
-        # -----------------------------------------------------------------
-        # Variables de estado
-        # -----------------------------------------------------------------
+     
         self._aruco_detected = False
         self._aruco_cx = 0.0
         self._aruco_size = 0.0
         self._action_start_time = None
         self._cuadrado_lados = 0
 
-        # -----------------------------------------------------------------
-        # Configurar detector ArUco
-        # -----------------------------------------------------------------
+     
         try:
             params = cv2.aruco.DetectorParameters()
         except AttributeError:
@@ -160,21 +149,16 @@ class ArucoFollowerFSM(Node):
             except Exception:
                 pass
 
-        # -----------------------------------------------------------------
-        # Inicializar Maquina de Estados (transitions) - FSM PURA
-        # -----------------------------------------------------------------
+   
         self._machine = Machine(
             model=self,
             states=ArucoFollowerFSM.states,
             transitions=ArucoFollowerFSM.transitions,
             initial='INIT',
             auto_transitions=False,
-            ignore_invalid_triggers=True  # Ignorar triggers invalidos
+            ignore_invalid_triggers=True  
         )
 
-        # -----------------------------------------------------------------
-        # Publishers y Subscribers
-        # -----------------------------------------------------------------
         self._cmd_pub = self.create_publisher(Twist, 'cmd_vel', 10)
 
         qos = QoSProfile(
@@ -184,12 +168,9 @@ class ArucoFollowerFSM(Node):
         )
         self.create_subscription(Image, self._image_topic, self._image_cb, qos)
 
-        # Timer principal de control (10 Hz)
+        
         self._control_timer = self.create_timer(0.1, self._control_loop)
 
-        # -----------------------------------------------------------------
-        # Informacion inicial
-        # -----------------------------------------------------------------
         self.get_logger().info('========================================================')
         self.get_logger().info('  Sprint 6 - PBI 6.1: FSM PURA con transitions')
         self.get_logger().info('========================================================')
@@ -204,12 +185,10 @@ class ArucoFollowerFSM(Node):
         self.get_logger().info('')
         self.get_logger().info('  Iniciando FSM...')
 
-        # Arrancar FSM inmediatamente
+        
         self.start()
 
-    # =====================================================================
-    # CONDITIONS (Funciones de condicion para transiciones)
-    # =====================================================================
+  
 
     def is_aruco_detected(self):
         """Condicion: ArUco detectado."""
@@ -248,9 +227,7 @@ class ArucoFollowerFSM(Node):
         """Condicion: Cuadrado completado (4 lados)."""
         return self._cuadrado_lados >= 4
 
-    # =====================================================================
-    # CALLBACKS DE ESTADO (on_enter_*)
-    # =====================================================================
+  
 
     def on_enter_buscar(self):
         self.get_logger().info('[BUSCAR] Girando para encontrar ArUco 17...')
@@ -277,9 +254,6 @@ class ArucoFollowerFSM(Node):
         self.get_logger().info('[DONE] Secuencia completada!')
         self._stop_robot()
 
-    # =====================================================================
-    # PROCESAMIENTO DE IMAGEN
-    # =====================================================================
 
     def _image_cb(self, msg):
         """Procesa imagen y actualiza deteccion."""
@@ -318,15 +292,13 @@ class ArucoFollowerFSM(Node):
         except Exception as e:
             self.get_logger().warn(f'Error: {e}', throttle_duration_sec=2.0)
 
-    # =====================================================================
-    # BUCLE DE CONTROL (ejecuta acciones y trigger check)
-    # =====================================================================
+  
 
     def _control_loop(self):
         """Bucle de control: ejecuta accion del estado actual y trigger check."""
         state = self.state
 
-        # Ejecutar accion segun estado actual
+        
         if state == 'BUSCAR':
             self._action_buscar()
         elif state == 'ACERCAR':
@@ -338,13 +310,11 @@ class ArucoFollowerFSM(Node):
         elif state == 'CUADRADO_GIRAR':
             self._action_girar()
 
-        # Intentar transicion (FSM evalua conditions automaticamente)
+        
         if state != 'DONE' and state != 'INIT':
             self.check()
 
-    # =====================================================================
-    # ACCIONES POR ESTADO
-    # =====================================================================
+  
 
     def _action_buscar(self):
         """Accion en BUSCAR: girar buscando."""
@@ -379,9 +349,7 @@ class ArucoFollowerFSM(Node):
         cmd.linear.x = self._avance_vel
         self._cmd_pub.publish(cmd)
 
-    # =====================================================================
-    # UTILIDADES
-    # =====================================================================
+
 
     def _stop_robot(self):
         """Detiene el robot."""
