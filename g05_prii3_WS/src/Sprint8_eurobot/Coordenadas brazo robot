@@ -1,0 +1,103 @@
+posicion de busqueda:
+name:
+- Junta1
+- Junta2
+- Junta3
+position:
+- -0.36201946594121814
+- 1.1228739367320824
+- -1.3330293046728292
+velocity:
+- 0.0
+- 0.0
+- 0.0
+effort:
+- 0.0
+- 0.0
+- 0.0
+---
+
+
+
+
+
+
+poscion natural:
+name:
+
+- Junta1
+
+- Junta2
+
+- Junta3
+
+position:
+
+- 0.05215534678790501
+
+- -0.09664078963700229
+
+- -1.2072428800662065
+
+velocity:
+
+- 0.0
+
+- 0.0
+
+- 0.0
+
+effort:
+
+- 0.0
+
+- 0.0
+
+- 0.0
+
+--- 
+
+
+Posicion media:
+name:
+- Junta1
+- Junta2
+- Junta3
+position:
+- 0.46326219794125656
+- 1.038504993398372
+- -2.086213871524679
+velocity:
+- 0.0
+- 0.0
+- 0.0
+effort:
+- 0.0
+- 0.0
+- 0.0
+---
+^Z
+
+
+Agarre: 
+
+name:
+- Junta1
+- Junta2
+- Junta3
+position:
+- 1.5355147686733197
+- 0.4832039481837702
+- -1.9819031779484553
+velocity:
+- 0.0
+- 0.0
+- 0.0
+effort:
+- 0.0
+- 0.0
+- 0.0
+---
+^Z
+[5]+  Stopped                 ros2 topic echo /joint_states
+

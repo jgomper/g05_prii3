@@ -1,0 +1,68 @@
+// --- PINES MOTORES (Configuración Yahboom) ---
+const int M1INA = 2; 
+const int M1INB = 4; 
+const int M1PWM = 9; 
+const int M1ENA = 6; 
+const int M2INA = 7; 
+const int M2INB = 8; 
+const int M2PWM = 10; 
+const int M2ENA = 12; 
+
+// --- PIN VENTOSA ---
+const int PIN_VENTOSA = 5; 
+
+// --- AJUSTE PARA IR RECTO ---
+// Si se va a la derecha, sube un poco VEL_MOTOR_2.
+// Si se va a la izquierda, sube un poco VEL_MOTOR_1.
+int VEL_MOTOR_1 = 30; // Velocidad Motor Izquierdo
+int VEL_MOTOR_2 = 34; // Velocidad Motor Derecho
+
+void setup() {
+  Serial.begin(115200); 
+  
+  pinMode(M1INA, OUTPUT); pinMode(M1INB, OUTPUT); pinMode(M1PWM, OUTPUT); pinMode(M1ENA, OUTPUT); 
+  pinMode(M2INA, OUTPUT); pinMode(M2INB, OUTPUT); pinMode(M2PWM, OUTPUT); pinMode(M2ENA, OUTPUT); 
+  pinMode(PIN_VENTOSA, OUTPUT); 
+
+  // Activamos los ENA
+  digitalWrite(M1ENA, HIGH); 
+  digitalWrite(M2ENA, HIGH); 
+  
+  digitalWrite(PIN_VENTOSA, LOW); 
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    char orden = Serial.read(); 
+
+    // --- CONTROL VENTOSA --- 
+    if (orden == 'V') digitalWrite(PIN_VENTOSA, HIGH); // ON
+    if (orden == 'v') digitalWrite(PIN_VENTOSA, LOW);  // OFF
+
+    // --- CONTROL MOVIMIENTO ---
+    if (orden == 'F') { // Adelante
+      digitalWrite(M1INA, HIGH); 
+      digitalWrite(M1INB, LOW); 
+      analogWrite(M1PWM, VEL_MOTOR_1); 
+      digitalWrite(M2INA, HIGH); 
+      digitalWrite(M2INB, LOW); 
+      analogWrite(M2PWM, VEL_MOTOR_2); 
+    }
+    
+    if (orden == 'B') { // Atrás
+      digitalWrite(M1INA, LOW); 
+      digitalWrite(M1INB, HIGH); 
+      analogWrite(M1PWM, VEL_MOTOR_1); 
+      digitalWrite(M2INA, LOW); 
+      digitalWrite(M2INB, HIGH); 
+      analogWrite(M2PWM, VEL_MOTOR_2); 
+    }
+
+    if (orden == 'S') { // Parar
+      analogWrite(M1PWM, 0); 
+      analogWrite(M2PWM, 0); 
+      digitalWrite(M1INA, LOW); digitalWrite(M1INB, LOW); 
+      digitalWrite(M2INA, LOW); digitalWrite(M2INB, LOW); 
+    }
+  }
+}

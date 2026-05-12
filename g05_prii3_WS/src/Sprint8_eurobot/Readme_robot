@@ -1,0 +1,46 @@
+
+------Conexion con el robot-----
+
+
+ssh jetson@192.168.111.125
+
+
+----Arrancar chasis (Terminal 1)
+
+	cd ~/robot_ws/
+	source install/setup.bash
+	ros2 launch diff_car diff_car.launch.py
+
+
+
+
+-----Arrancar motor brazo (Terminal 2)-----
+
+cd ~/brazo_ws/
+	source install/setup.bash
+ros2 launch brazo_pkg bringup.launch.py
+
+			
+			
+			-----Guardar puntos brazo----
+
+			ros2 topic echo /joint_states
+
+			-----Cambiar USB de brazo----
+
+			nano ~/brazo_ws/src/brazo_pkg/urdf/robot.urdf.xacro
+			cd ~/brazo_ws
+			colcon build --packages-select brazo_pkg
+			source install/setup.bash
+
+
+
+-----Arranque y ejecucion Ventosa (No hace falta si ejecutas desde el script)---
+
+
+			# Configura la velocidad y los permisos del puerto
+			stty -F /dev/ttyACM0 115200 raw -echo
+			sudo chmod 777 /dev/ttyACM0
+
+			python3 ventosa_directa.py
+
