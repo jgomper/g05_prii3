@@ -1,68 +1,97 @@
 // --- PINES MOTORES (Configuración Yahboom) ---
 const int M1INA = 2; 
-const int M1INB = 4; 
+const int M1INB = 4;
 const int M1PWM = 9; 
 const int M1ENA = 6; 
+
 const int M2INA = 7; 
-const int M2INB = 8; 
+const int M2INB = 8;
 const int M2PWM = 10; 
 const int M2ENA = 12; 
 
 // --- PIN VENTOSA ---
-const int PIN_VENTOSA = 5; 
-
-// --- AJUSTE PARA IR RECTO ---
-// Si se va a la derecha, sube un poco VEL_MOTOR_2.
-// Si se va a la izquierda, sube un poco VEL_MOTOR_1.
-int VEL_MOTOR_1 = 30; // Velocidad Motor Izquierdo
-int VEL_MOTOR_2 = 34; // Velocidad Motor Derecho
+const int PIN_VENTOSA = 5;
 
 void setup() {
   Serial.begin(115200); 
+  // Reducimos el timeout para que el Arduino no se quede "congelado" esperando datos
+  Serial.setTimeout(10); 
   
   pinMode(M1INA, OUTPUT); pinMode(M1INB, OUTPUT); pinMode(M1PWM, OUTPUT); pinMode(M1ENA, OUTPUT); 
   pinMode(M2INA, OUTPUT); pinMode(M2INB, OUTPUT); pinMode(M2PWM, OUTPUT); pinMode(M2ENA, OUTPUT); 
-  pinMode(PIN_VENTOSA, OUTPUT); 
+  pinMode(PIN_VENTOSA, OUTPUT);
 
   // Activamos los ENA
   digitalWrite(M1ENA, HIGH); 
   digitalWrite(M2ENA, HIGH); 
   
-  digitalWrite(PIN_VENTOSA, LOW); 
+  digitalWrite(PIN_VENTOSA, LOW);
 }
 
 void loop() {
   if (Serial.available() > 0) {
-    char orden = Serial.read(); 
+    char comando = Serial.read();
 
     // --- CONTROL VENTOSA --- 
-    if (orden == 'V') digitalWrite(PIN_VENTOSA, HIGH); // ON
-    if (orden == 'v') digitalWrite(PIN_VENTOSA, LOW);  // OFF
+    if (comando == 'V') digitalWrite(PIN_VENTOSA, HIGH); // ON
+    else if (comando == 'v') digitalWrite(PIN_VENTOSA, LOW); // OFF
 
-    // --- CONTROL MOVIMIENTO ---
-    if (orden == 'F') { // Adelante
-      digitalWrite(M1INA, HIGH); 
-      digitalWrite(M1INB, LOW); 
-      analogWrite(M1PWM, VEL_MOTOR_1); 
-      digitalWrite(M2INA, HIGH); 
-      digitalWrite(M2INB, LOW); 
-      analogWrite(M2PWM, VEL_MOTOR_2); 
-    }
-    
-    if (orden == 'B') { // Atrás
-      digitalWrite(M1INA, LOW); 
-      digitalWrite(M1INB, HIGH); 
-      analogWrite(M1PWM, VEL_MOTOR_1); 
-      digitalWrite(M2INA, LOW); 
-      digitalWrite(M2INB, HIGH); 
-      analogWrite(M2PWM, VEL_MOTOR_2); 
+    // --- PARADA DE EMERGENCIA ---
+    else if (comando == 'S') { 
+      controlMotorIzquierdo(0);
+      controlMotorDerecho(0);
     }
 
-    if (orden == 'S') { // Parar
-      analogWrite(M1PWM, 0); 
-      analogWrite(M2PWM, 0); 
-      digitalWrite(M1INA, LOW); digitalWrite(M1INB, LOW); 
-      digitalWrite(M2INA, LOW); digitalWrite(M2INB, LOW); 
+    // --- NUEVO CONTROL DIFERENCIAL (EJ: "M 40 20\n") ---
+    else if (comando == 'M') {
+      // Lee los dos números que vienen después de la 'M'
+      int vel_izq = Serial.parseInt(); // Velocidad para Motor 2 (Izquierdo)
+      int vel_der = Serial.parseInt(); // Velocidad para Motor 1 (Derecho)
+      
+      controlMotorIzquierdo(vel_izq);
+      controlMotorDerecho(vel_der);
     }
+  }
+}
+
+// ==========================================
+// FUNCIONES AUXILIARES PARA MOTORES
+// Permiten ir hacia adelante (vel > 0) y hacia atrás (vel < 0)
+// ==========================================
+
+void controlMotorDerecho(int velocidad) {
+  if (velocidad > 0) { // Adelante
+    digitalWrite(M1INA, HIGH); 
+    digitalWrite(M1INB, LOW);
+    analogWrite(M1PWM, velocidad);
+  } 
+  else if (velocidad < 0) { // Atrás (invertimos polaridad)
+    digitalWrite(M1INA, LOW); 
+    digitalWrite(M1INB, HIGH);
+    // Usamos abs() porque analogWrite solo acepta valores positivos (0-255)
+    analogWrite(M1PWM, abs(velocidad)); 
+  } 
+  else { // Parar (0)
+    digitalWrite(M1INA, LOW); 
+    digitalWrite(M1INB, LOW);
+    analogWrite(M1PWM, 0);
+  }
+}
+
+void controlMotorIzquierdo(int velocidad) {
+  if (velocidad > 0) { // Adelante
+    digitalWrite(M2INA, HIGH); 
+    digitalWrite(M2INB, LOW);
+    analogWrite(M2PWM, velocidad);
+  } 
+  else if (velocidad < 0) { // Atrás (invertimos polaridad)
+    digitalWrite(M2INA, LOW); 
+    digitalWrite(M2INB, HIGH);
+    analogWrite(M2PWM, abs(velocidad)); 
+  } 
+  else { // Parar (0)
+    digitalWrite(M2INA, LOW); 
+    digitalWrite(M2INB, LOW);
+    analogWrite(M2PWM, 0);
   }
 }

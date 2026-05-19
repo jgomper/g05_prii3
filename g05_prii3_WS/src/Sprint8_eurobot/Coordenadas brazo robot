@@ -17,9 +17,25 @@ effort:
 - 0.0
 ---
 
+posicion busqueda mas cercana para evitar ruido:
 
-
-
+name:
+- Junta1
+- Junta2
+- Junta3
+position:
+- 0.320601984667892
+- 1.6904468282497698
+- -2.130699314373363
+velocity:
+- 0.0
+- 0.0
+- 0.0
+effort:
+- 0.0
+- 0.0
+- 0.0
+---
 
 
 poscion natural:
@@ -100,4 +116,5 @@ effort:
 ---
 ^Z
 [5]+  Stopped                 ros2 topic echo /joint_states
+
 
