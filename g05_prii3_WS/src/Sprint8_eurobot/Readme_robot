@@ -23,6 +23,7 @@ ros2 launch brazo_pkg bringup.launch.py
 		
 			-----Cambiar USB de brazo----
 			sudo ln -sf /dev/ttyUSB0 /dev/ttyUSB1
+			sudo chmod 777 /dev/ttyUSB0 /dev/ttyUSB1
 			
 			
 			-----Guardar puntos brazo----
