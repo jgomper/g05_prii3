@@ -7,9 +7,12 @@ import serial
 import time
 import os
 import numpy as np
+import threading
 from enum import Enum, auto
 
+
 class State(Enum):
+    """Estados de la máquina de estados finitos del robot."""
     WAIT_START = auto()
     INIT = auto()
     SEARCH_ARUCO = auto()
@@ -21,10 +24,17 @@ class State(Enum):
     DROP = auto()
     FINISHED = auto()
 
+
 class RobotSiguelineasFSM(Node):
     def __init__(self):
         super().__init__('siguelineas_fsm_node')
 
+        # --- VARIABLES DE IMU (BNO055) ---
+        self.yaw_actual = 0.0
+        self.giro_iniciado = False
+        self.yaw_inicial = 0.0
+
+        # --- 1. CONEXION ARDUINO ---
         os.system("sudo fuser -k /dev/ttyACM0")
         try:
             self.arduino = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
@@ -32,38 +42,50 @@ class RobotSiguelineasFSM(Node):
             self.arduino.reset_input_buffer()
             self.arduino.reset_output_buffer()
             self.arduino.write(b'S')
+            
+            # --- INICIAR EL HILO QUE ESCUCHA LA IMU ---
+            self.hilo_lectura = threading.Thread(target=self.leer_serie_arduino, daemon=True)
+            self.hilo_lectura.start()
+            
         except Exception as e:
             self.get_logger().error(f"No se detecto el Arduino: {e}")
             exit()
 
+        # --- 2. CONFIGURACION BRAZO (ROS 2) ---
         self.publisher = self.create_publisher(JointTrajectory, '/arm_controller/joint_trajectory', 10)
         self.POS_BUSCADOR = [0.13345632854584366, 1.541650691824862, -1.7088545977048113]
         self.POS_AGARRE = [1.535515, 0.483204, -1.98190]
         self.POS_SOLTAR = [1.5355147686733197, 0.4832039481837702, -1.9819031779484553]
 
+        # --- 3. PARAMETROS ARUCO ---
         self.TARGET_ID = 36
         self.TARGET_AREA_MIN = 23000.0
         self.TARGET_ERR_X_MIN = 30
         self.TARGET_ERR_X_MAX = 95
 
+        # --- 3b. PARAMETROS ALINEACION PRE-AGARRE ---
         self.ALIGN_TARGET_AREA = 24000.0
         self.ALIGN_AREA_TOLERANCE = 500.0
         self.ALIGN_VEL = 15
         self.ALIGN_TIMEOUT = 5.0
         self.align_start_time = 0.0
 
+        # --- 4. PARAMETROS ALMACEN VERDE ---
         self.GREEN_HSV_MIN = (35, 60, 60)
         self.GREEN_HSV_MAX = (85, 255, 255)
         self.GREEN_AREA_MIN = 2000
         self.GREEN_ASPECT_RATIO_MIN = 3.0
 
+        # --- 5. CONSTANTES DE CONTROL ---
         self.VEL_NORMAL = 35
         self.VEL_CARGA = 30
         self.KP = 0.4  
         self.UMBRAL_PIXELES_CRUCE = 400
 
+        # Filtro Anti-Color para la T (0 = negro/gris, 255 = color puro)
         self.SATURACION_MAX_NEGRO = 90 
 
+        # --- 6. ESTADO FSM ---
         self.state = State.WAIT_START
         self.frames_procesados = 0
         self.green_seen_count = 0
@@ -71,13 +93,33 @@ class RobotSiguelineasFSM(Node):
         self.green_lock_until = 0.0
         self.interseccion_lock_until = 0.0
         self.line_lost_count = 0
-        self.last_cx = None
+        self.last_cx = None 
 
+        # --- 7. CAMARA Y DETECTOR ---
         self.cap = None
         self.detector = cv2.aruco.ArucoDetector(
             cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_50),
             cv2.aruco.DetectorParameters()
         )
+
+    # ================================================================
+    # LECTURA DE IMU EN SEGUNDO PLANO
+    # ================================================================
+    def leer_serie_arduino(self):
+        """Hilo daemon que lee constantemente el YAW del Arduino sin bloquear la cámara."""
+        while True:
+            try:
+                if self.arduino.in_waiting > 0:
+                    linea = self.arduino.readline().decode('utf-8', errors='ignore').strip()
+                    if linea.startswith("Y:"):
+                        self.yaw_actual = float(linea.split(":")[1])
+            except Exception as e:
+                pass
+            time.sleep(0.005)
+
+    # ================================================================
+    # MÉTODOS DE HARDWARE
+    # ================================================================
 
     def mover_brazo(self, posiciones, segundos):
         msg = JointTrajectory()
@@ -134,9 +176,17 @@ class RobotSiguelineasFSM(Node):
             self.cap.read()
             time.sleep(0.01)
 
+    # ================================================================
+    # TRANSICIÓN DE ESTADOS
+    # ================================================================
+
     def transition(self, new_state):
         self.get_logger().info(f"FSM: {self.state.name} --> {new_state.name}")
         self.state = new_state
+
+    # ================================================================
+    # LÓGICA DE SIGUELÍNEAS (CON OFFSET PARA EVITAR PARED)
+    # ================================================================
 
     def seguir_linea(self, roi, thresh, con_carga):
         height, width, _ = roi.shape
@@ -146,8 +196,7 @@ class RobotSiguelineasFSM(Node):
         target_x = centro_pantalla - OFFSET_X
 
         thresh_recortado = thresh.copy()
-        
-        corte_y = int(height * 0.4)
+        corte_y = int(height * 0.4) 
         thresh_recortado[0:corte_y, :] = 0
 
         contours, _ = cv2.findContours(thresh_recortado, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -180,13 +229,13 @@ class RobotSiguelineasFSM(Node):
                 self.parar_motores()
             else:
                 v_izq, v_der = self.enviar_velocidad(velocidad_actual + ajuste, velocidad_actual - ajuste)
-                print(f"[{self.state.name}] Err: {error:4d} | Izq: {v_izq:3d} | Der: {v_der:3d}     ", end='\r')
+                print(f"[{self.state.name}] Err: {error:4d} | Izq: {v_izq:3d} | Der: {v_der:3d} | Yaw: {self.yaw_actual:.1f}º    ", end='\r')
         else:
             self.line_lost_count += 1
             
             if self.state == State.SEARCH_GREEN:
                 self.enviar_velocidad(10, 25)
-                print(f"[{self.state.name}] LINEA PERDIDA -> arco izquierda ({self.line_lost_count})  ", end='\r')
+                print(f"[{self.state.name}] LINEA PERDIDA -> arco izquierda ({self.line_lost_count}) | Yaw: {self.yaw_actual:.1f}º", end='\r')
             else:
                 if self.line_lost_count <= 25:
                     self.enviar_velocidad(15, -15)
@@ -196,6 +245,10 @@ class RobotSiguelineasFSM(Node):
                     print(f"[{self.state.name}] LINEA PERDIDA -> izquierda ({self.line_lost_count})   ", end='\r')
                     if self.line_lost_count >= 50:
                         self.line_lost_count = 0
+
+    # ================================================================
+    # HANDLERS DE CADA ESTADO
+    # ================================================================
 
     def _handle_wait_start(self):
         print("\n========================================")
@@ -286,6 +339,9 @@ class RobotSiguelineasFSM(Node):
         self.interseccion_lock_until = time.time() + 3.0
         self.transition(State.SEARCH_INTERSECTION)
 
+    # ================================================================
+    # BÚSQUEDA DE T (A LA DERECHA) - GEOMETRÍA ESTRICTA
+    # ================================================================
     def _handle_search_intersection(self, frame_full, roi, thresh_linea, thresh_cruce):
         height, width, _ = roi.shape
 
@@ -297,8 +353,9 @@ class RobotSiguelineasFSM(Node):
             
             cruce_valido = False
             for c in contours_derecha:
-                if cv2.contourArea(c) > 600:
+                if cv2.contourArea(c) > 600: 
                     x, y, w, h = cv2.boundingRect(c)
+                    
                     if w > h * 2 and h < 80: 
                         cruce_valido = True
                         color_caja = (0, 255, 0)
@@ -319,20 +376,41 @@ class RobotSiguelineasFSM(Node):
 
         self.seguir_linea(roi, thresh_linea, con_carga=True)
 
+    # ================================================================
+    # GIRO PERFECTO A 90º CON IMU BNO055
+    # ================================================================
     def _handle_turn_right(self):
-        print("[TURN] Ejecutando giro y avance de corrección...")
-        self.avanzar_ms(300, velocidad=30)
-        self.enviar_velocidad(70, -20)
-        time.sleep(0.55)
-        self.parar_motores()
+        if not self.giro_iniciado:
+            print(f"\n[TURN] Iniciando giro de 90 grados por IMU BNO055. (Yaw Inicial: {self.yaw_actual:.1f}º)")
+            self.yaw_inicial = self.yaw_actual
+            
+            # Velocidad más suave para tener menos inercia
+            self.enviar_velocidad(50, -30)
+            self.giro_iniciado = True
 
-        self.avanzar_ms(250, velocidad=35)
+        # Cálculo de diferencia teniendo en cuenta el salto 0º - 360º de la brújula
+        diferencia = abs(self.yaw_actual - self.yaw_inicial)
+        if diferencia > 180.0:
+            diferencia = 360.0 - diferencia
+        
+        grados_girados = diferencia
+        print(f"[TURN] Grados girados: {grados_girados:.1f} / 90.0º     ", end='\r')
 
-        print("[TURN] Purgando cámara...")
-        self.purgar_camara(15)
+        # Frenamos antes (72.0) para compensar la inercia del chasis
+        if grados_girados >= 40.0:
+            print(f"\n[TURN] ¡Giro completado! (Ángulo Final IMU: {grados_girados:.1f}º + Inercia)")
+            self.parar_motores()
+            
+            self.avanzar_ms(250, velocidad=35)
 
-        self.green_lock_until = time.monotonic() + 2.0
-        self.transition(State.SEARCH_GREEN)
+            print("[TURN] Purgando cámara...")
+            self.purgar_camara(15)
+
+            self.giro_iniciado = False
+            self.green_lock_until = time.monotonic() + 2.0
+            self.transition(State.SEARCH_GREEN)
+            
+        time.sleep(0.01) # Pausa para no saturar el bucle mientras gira
 
     def _handle_search_green(self, frame_full, roi, thresh):
         self.seguir_linea(roi, thresh, con_carga=True)
@@ -370,6 +448,10 @@ class RobotSiguelineasFSM(Node):
         self.parar_motores()
         self.transition(State.FINISHED)
 
+    # ================================================================
+    # BUCLE PRINCIPAL DE LA FSM
+    # ================================================================
+
     def run(self):
         try:
             while rclpy.ok() and self.state in (State.WAIT_START, State.INIT):
@@ -379,6 +461,7 @@ class RobotSiguelineasFSM(Node):
                     self._handle_init()
 
             while rclpy.ok() and self.state != State.FINISHED:
+
                 if self.state == State.GRAB:
                     self._handle_grab()
                     continue
@@ -399,17 +482,20 @@ class RobotSiguelineasFSM(Node):
                 frame_resized = cv2.resize(frame, (320, 240))
                 roi = frame_resized[120:240, 10:310]
 
+                # --- 1. FILTRO DE SIGUELÍNEAS ---
                 gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
                 blur = cv2.GaussianBlur(gray, (5, 5), 0)
                 _, thresh_linea = cv2.threshold(blur, 60, 255, cv2.THRESH_BINARY_INV)
                 kernel = np.ones((5, 5), np.uint8)
                 thresh_linea = cv2.morphologyEx(thresh_linea, cv2.MORPH_OPEN, kernel)
 
+                # --- 2. FILTRO ANTI-HOJAS ---
                 hsv_roi = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
                 _, s_channel, _ = cv2.split(hsv_roi)
                 _, mask_s_baja = cv2.threshold(s_channel, self.SATURACION_MAX_NEGRO, 255, cv2.THRESH_BINARY_INV)
                 thresh_cruce = cv2.bitwise_and(thresh_linea, mask_s_baja)
 
+                # Despachar al handler del estado actual
                 if self.state == State.SEARCH_ARUCO:
                     self._handle_search_aruco(frame_full, roi, thresh_linea)
                 elif self.state == State.ALIGN_GRAB:
@@ -419,6 +505,7 @@ class RobotSiguelineasFSM(Node):
                 elif self.state == State.SEARCH_GREEN:
                     self._handle_search_green(frame_full, roi, thresh_linea)
 
+                # Ventanas de debug
                 cv2.imshow("Vision Original", roi)
                 cv2.imshow("Filtro Linea Normal", thresh_linea)
                 cv2.imshow("Filtro T (Solo Negro)", thresh_cruce)
@@ -440,10 +527,12 @@ class RobotSiguelineasFSM(Node):
             self.destroy_node()
             rclpy.shutdown()
 
+
 def main():
     rclpy.init()
     robot = RobotSiguelineasFSM()
     robot.run()
+
 
 if __name__ == '__main__':
     main()
