@@ -1,0 +1,9 @@
+Area: 23751 | Error_X: 30
+Area: 24054 | Error_X: 68
+Area: 24074 | Error_X: 65
+Area: 24049 | Error_X: 36
+Area: 24188 | Error_X: 64
+Area: 23958 | Error_X: 63
+Area: 23852 | Error_X: 57
+Area: 23746 | Error_X: 91
+Area: 23814 | Error_X: 84
