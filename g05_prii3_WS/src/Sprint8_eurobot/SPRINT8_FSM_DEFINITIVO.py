@@ -1,3 +1,4 @@
+# Importación de librerías necesarias para ROS 2, control del brazo, visión por computador, comunicación serie y máquina de estados.
 import rclpy
 from rclpy.node import Node
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
@@ -9,6 +10,7 @@ import os
 import numpy as np
 from enum import Enum, auto
 
+# Definición de los posibles estados de la máquina de estados finita que controla la misión del robot.
 class State(Enum):
     WAIT_START = auto()
     INIT = auto()
@@ -21,8 +23,10 @@ class State(Enum):
     DROP = auto()
     FINISHED = auto()
 
+# Nodo principal de ROS 2 que implementa toda la lógica de la FSM del robot siguelíneas Eurobot.
 class RobotSiguelineasFSM(Node):
     def __init__(self):
+        # Inicializa la conexión con Arduino, la cámara, el publicador del brazo y todos los parámetros de configuración.
         super().__init__('siguelineas_fsm_node')
 
         os.system("sudo fuser -k /dev/ttyACM0")
@@ -79,6 +83,7 @@ class RobotSiguelineasFSM(Node):
             cv2.aruco.DetectorParameters()
         )
 
+    # Publica una trayectoria articular para mover el brazo robótico a la posición indicada en el tiempo especificado.
     def mover_brazo(self, posiciones, segundos):
         msg = JointTrajectory()
         msg.joint_names = ['Junta1', 'Junta2', 'Junta3']
@@ -89,6 +94,7 @@ class RobotSiguelineasFSM(Node):
         self.publisher.publish(msg)
         time.sleep(segundos + 1.0)
 
+    # Envía al Arduino las velocidades de las ruedas izquierda y derecha, limitándolas a un rango seguro.
     def enviar_velocidad(self, vel_izq, vel_der):
         vel_izq = max(-40, min(70, int(vel_izq)))
         vel_der = max(-40, min(70, int(vel_der)))
@@ -96,20 +102,25 @@ class RobotSiguelineasFSM(Node):
         self.arduino.write(comando.encode())
         return vel_izq, vel_der
 
+    # Envía el comando de parada al Arduino para detener ambos motores.
     def parar_motores(self):
         self.arduino.write(b'S')
 
+    # Hace avanzar al robot a velocidad constante durante un número determinado de milisegundos y luego para.
     def avanzar_ms(self, milisegundos, velocidad=25):
         self.enviar_velocidad(velocidad, velocidad)
         time.sleep(milisegundos / 1000.0)
         self.parar_motores()
 
+    # Activa la ventosa del efector final enviando el comando correspondiente al Arduino.
     def activar_ventosa(self):
         self.arduino.write(b'V')
 
+    # Desactiva la ventosa del efector final enviando el comando correspondiente al Arduino.
     def desactivar_ventosa(self):
         self.arduino.write(b'v')
 
+    # Detecta la presencia del almacén verde en la imagen usando filtrado HSV y análisis de contornos por relación de aspecto.
     def detectar_almacen_verde(self, frame_bgr):
         hsv = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2HSV)
         mask = cv2.inRange(hsv, self.GREEN_HSV_MIN, self.GREEN_HSV_MAX)
@@ -129,15 +140,18 @@ class RobotSiguelineasFSM(Node):
                 return True
         return False
 
+    # Lee y descarta varios fotogramas de la cámara para estabilizar el balance de blancos y la exposición.
     def purgar_camara(self, n_frames=40):
         for _ in range(n_frames):
             self.cap.read()
             time.sleep(0.01)
 
+    # Realiza la transición de un estado a otro en la FSM, registrando el cambio en el logger.
     def transition(self, new_state):
         self.get_logger().info(f"FSM: {self.state.name} --> {new_state.name}")
         self.state = new_state
 
+    # Implementa el algoritmo de seguimiento de línea usando visión, calculando el error lateral y ajustando las velocidades con control proporcional.
     def seguir_linea(self, roi, thresh, con_carga):
         height, width, _ = roi.shape
         centro_pantalla = width // 2
@@ -197,6 +211,7 @@ class RobotSiguelineasFSM(Node):
                     if self.line_lost_count >= 50:
                         self.line_lost_count = 0
 
+    # Muestra el menú de inicio y espera a que el usuario presione ENTER para comenzar la misión.
     def _handle_wait_start(self):
         print("\n========================================")
         print("  ROBOT EUROBOT - MÁQUINA DE ESTADOS")
@@ -205,6 +220,7 @@ class RobotSiguelineasFSM(Node):
         input()
         self.transition(State.INIT)
 
+    # Inicializa el brazo en posición de búsqueda, abre la cámara y purga los primeros fotogramas para estabilizarla.
     def _handle_init(self):
         print("\n[INIT] Moviendo brazo a posicion de busqueda...")
         self.mover_brazo(self.POS_BUSCADOR, 2)
@@ -222,6 +238,7 @@ class RobotSiguelineasFSM(Node):
         self.frames_procesados = 0
         self.transition(State.SEARCH_ARUCO)
 
+    # Sigue la línea mientras busca el marcador ArUco objetivo; cuando lo detecta suficientemente cerca y centrado, transiciona al alineamiento.
     def _handle_search_aruco(self, frame_full, roi, thresh):
         self.seguir_linea(roi, thresh, con_carga=False)
 
@@ -241,6 +258,7 @@ class RobotSiguelineasFSM(Node):
                     self.align_start_time = time.time()
                     self.transition(State.ALIGN_GRAB)
 
+    # Ajusta la distancia al marcador ArUco avanzando o retrocediendo hasta que el área coincida con el objetivo, preparando el agarre.
     def _handle_align_grab(self, frame_full):
         if time.time() - self.align_start_time > self.ALIGN_TIMEOUT:
             print(f"\n[ALIGN] Timeout ({self.ALIGN_TIMEOUT}s) -> agarrando con posicion actual")
@@ -275,6 +293,7 @@ class RobotSiguelineasFSM(Node):
         else:
             self.enviar_velocidad(-self.ALIGN_VEL, -self.ALIGN_VEL)
 
+    # Ejecuta la secuencia de agarre: baja el brazo, activa la ventosa, sube la pieza y transiciona a buscar la intersección.
     def _handle_grab(self):
         self.get_logger().info("--- INICIANDO AGARRE ---")
         self.mover_brazo(self.POS_AGARRE, 2)
@@ -286,6 +305,7 @@ class RobotSiguelineasFSM(Node):
         self.interseccion_lock_until = time.time() + 3.0
         self.transition(State.SEARCH_INTERSECTION)
 
+    # Sigue la línea con carga mientras busca una intersección en T a la derecha mediante análisis geométrico de contornos.
     def _handle_search_intersection(self, frame_full, roi, thresh_linea, thresh_cruce):
         height, width, _ = roi.shape
 
@@ -319,6 +339,7 @@ class RobotSiguelineasFSM(Node):
 
         self.seguir_linea(roi, thresh_linea, con_carga=True)
 
+    # Ejecuta la maniobra de giro a la derecha con avance de corrección y prepara la búsqueda del almacén verde.
     def _handle_turn_right(self):
         print("[TURN] Ejecutando giro y avance de corrección...")
         self.avanzar_ms(300, velocidad=30)
@@ -334,6 +355,7 @@ class RobotSiguelineasFSM(Node):
         self.green_lock_until = time.monotonic() + 2.0
         self.transition(State.SEARCH_GREEN)
 
+    # Sigue la línea mientras cuenta las detecciones del almacén verde; al detectarlo dos veces, transiciona a soltar la pieza.
     def _handle_search_green(self, frame_full, roi, thresh):
         self.seguir_linea(roi, thresh, con_carga=True)
 
@@ -356,6 +378,7 @@ class RobotSiguelineasFSM(Node):
             time.sleep(0.5)
             self.transition(State.DROP)
 
+    # Avanza hasta el almacén, baja el brazo, desactiva la ventosa para soltar la pieza y finaliza la misión.
     def _handle_drop(self):
         self.get_logger().info("--- AVANZANDO AL ALMACÉN ---")
         self.avanzar_ms(2000, velocidad=25)
@@ -370,6 +393,7 @@ class RobotSiguelineasFSM(Node):
         self.parar_motores()
         self.transition(State.FINISHED)
 
+    # Bucle principal que ejecuta la FSM: procesa fotogramas, aplica filtros de visión y despacha al handler del estado actual.
     def run(self):
         try:
             while rclpy.ok() and self.state in (State.WAIT_START, State.INIT):
@@ -440,6 +464,7 @@ class RobotSiguelineasFSM(Node):
             self.destroy_node()
             rclpy.shutdown()
 
+# Punto de entrada del programa: inicializa ROS 2, crea el nodo del robot y ejecuta la máquina de estados.
 def main():
     rclpy.init()
     robot = RobotSiguelineasFSM()
