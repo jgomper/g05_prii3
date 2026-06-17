@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+launch/pattern_matching_simulation_launch.py
+launch/real_robot.launch.py
+resource/sprint5_eurobot
+sprint5_eurobot/__init__.py
+sprint5_eurobot/pattern_matching.py
+sprint5_eurobot/real_navigator.py
+sprint5_eurobot.egg-info/PKG-INFO
+sprint5_eurobot.egg-info/SOURCES.txt
+sprint5_eurobot.egg-info/dependency_links.txt
+sprint5_eurobot.egg-info/entry_points.txt
+sprint5_eurobot.egg-info/requires.txt
+sprint5_eurobot.egg-info/top_level.txt
+sprint5_eurobot.egg-info/zip-safe

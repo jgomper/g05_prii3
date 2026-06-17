@@ -1,0 +1,4 @@
+import sys
+if sys.prefix == '/usr':
+    sys.real_prefix = sys.prefix
+    sys.prefix = sys.exec_prefix = '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/sprint4_eurobot'

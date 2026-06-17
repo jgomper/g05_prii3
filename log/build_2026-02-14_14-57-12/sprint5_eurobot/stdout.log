@@ -1,0 +1,25 @@
+running develop
+running egg_info
+creating sprint5_eurobot.egg-info
+writing sprint5_eurobot.egg-info/PKG-INFO
+writing dependency_links to sprint5_eurobot.egg-info/dependency_links.txt
+writing entry points to sprint5_eurobot.egg-info/entry_points.txt
+writing requirements to sprint5_eurobot.egg-info/requires.txt
+writing top-level names to sprint5_eurobot.egg-info/top_level.txt
+writing manifest file 'sprint5_eurobot.egg-info/SOURCES.txt'
+reading manifest file 'sprint5_eurobot.egg-info/SOURCES.txt'
+writing manifest file 'sprint5_eurobot.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages/site.py
+Creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages/sprint5-eurobot.egg-link (link to .)
+Installing real_navigator script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/sprint5_eurobot
+
+Installed /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot
+running symlink_data
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/ament_index
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/ament_index/resource_index
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/ament_index/resource_index/packages
+symbolically linking /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/resource/sprint5_eurobot -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/ament_index/resource_index/packages
+symbolically linking /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/package.xml -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot/launch
+symbolically linking /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/launch/real_robot.launch.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot/launch

@@ -1,0 +1,18 @@
+[2.434s] Invoking command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/build --no-deps symlink_data
+[2.939s] running develop
+[3.236s] running egg_info
+[3.237s] writing eurobot_real.egg-info/PKG-INFO
+[3.237s] writing dependency_links to eurobot_real.egg-info/dependency_links.txt
+[3.237s] writing entry points to eurobot_real.egg-info/entry_points.txt
+[3.237s] writing requirements to eurobot_real.egg-info/requires.txt
+[3.237s] writing top-level names to eurobot_real.egg-info/top_level.txt
+[3.310s] reading manifest file 'eurobot_real.egg-info/SOURCES.txt'
+[3.311s] writing manifest file 'eurobot_real.egg-info/SOURCES.txt'
+[3.390s] running build_ext
+[3.390s] Creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages/eurobot-real.egg-link (link to .)
+[3.392s] Installing real_navigator script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/bin
+[3.393s] Installing real_vision_node script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/bin
+[3.393s] 
+[3.393s] Installed /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real
+[3.393s] running symlink_data
+[3.471s] Invoked command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/build --no-deps symlink_data

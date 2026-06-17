@@ -1,0 +1,4 @@
+[console_scripts]
+aruco_detector = sprint6_eurobot.aruco_detector:main
+fsm_navigator = sprint6_eurobot.fsm_navigator:main
+

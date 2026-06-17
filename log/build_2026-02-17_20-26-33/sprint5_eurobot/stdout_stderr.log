@@ -1,0 +1,38 @@
+running develop
+Removing /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages/sprint5-eurobot.egg-link (link to .)
+running egg_info
+writing ../../build/sprint5_eurobot/sprint5_eurobot.egg-info/PKG-INFO
+writing dependency_links to ../../build/sprint5_eurobot/sprint5_eurobot.egg-info/dependency_links.txt
+writing entry points to ../../build/sprint5_eurobot/sprint5_eurobot.egg-info/entry_points.txt
+writing requirements to ../../build/sprint5_eurobot/sprint5_eurobot.egg-info/requires.txt
+writing top-level names to ../../build/sprint5_eurobot/sprint5_eurobot.egg-info/top_level.txt
+reading manifest file '../../build/sprint5_eurobot/sprint5_eurobot.egg-info/SOURCES.txt'
+writing manifest file '../../build/sprint5_eurobot/sprint5_eurobot.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/build
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/build/lib
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/build/lib/sprint5_eurobot
+copying sprint5_eurobot/__init__.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/build/lib/sprint5_eurobot
+copying sprint5_eurobot/pattern_matching.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/build/lib/sprint5_eurobot
+copying sprint5_eurobot/real_navigator.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/build/lib/sprint5_eurobot
+running install
+running install_lib
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages/sprint5_eurobot
+copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/build/lib/sprint5_eurobot/__init__.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages/sprint5_eurobot
+copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/build/lib/sprint5_eurobot/pattern_matching.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages/sprint5_eurobot
+copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/build/lib/sprint5_eurobot/real_navigator.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages/sprint5_eurobot
+byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages/sprint5_eurobot/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages/sprint5_eurobot/pattern_matching.py to pattern_matching.cpython-38.pyc
+byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages/sprint5_eurobot/real_navigator.py to real_navigator.cpython-38.pyc
+running install_data
+copying resource/sprint5_eurobot -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/ament_index/resource_index/packages
+copying package.xml -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot
+copying launch/pattern_matching_simulation_launch.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot/launch
+copying launch/real_robot.launch.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot/launch
+running install_egg_info
+Copying ../../build/sprint5_eurobot/sprint5_eurobot.egg-info to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages/sprint5_eurobot-0.0.0-py3.8.egg-info
+running install_scripts
+Installing pattern_matching script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/sprint5_eurobot
+Installing real_navigator script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/sprint5_eurobot
+writing list of installed files to '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/install.log'

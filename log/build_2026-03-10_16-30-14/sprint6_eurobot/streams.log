@@ -1,0 +1,25 @@
+[0.523s] Invoking command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/sprint6_eurobot': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/sprint6_eurobot build --build-base /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/build install --record /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/install.log --single-version-externally-managed install_data
+[0.699s] running egg_info
+[0.699s] writing ../../build/sprint6_eurobot/sprint6_eurobot.egg-info/PKG-INFO
+[0.699s] writing dependency_links to ../../build/sprint6_eurobot/sprint6_eurobot.egg-info/dependency_links.txt
+[0.700s] writing entry points to ../../build/sprint6_eurobot/sprint6_eurobot.egg-info/entry_points.txt
+[0.700s] writing requirements to ../../build/sprint6_eurobot/sprint6_eurobot.egg-info/requires.txt
+[0.700s] writing top-level names to ../../build/sprint6_eurobot/sprint6_eurobot.egg-info/top_level.txt
+[0.727s] reading manifest file '../../build/sprint6_eurobot/sprint6_eurobot.egg-info/SOURCES.txt'
+[0.728s] writing manifest file '../../build/sprint6_eurobot/sprint6_eurobot.egg-info/SOURCES.txt'
+[0.728s] running build
+[0.728s] running build_py
+[0.728s] copying sprint6_eurobot/aruco_detector.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/build/lib/sprint6_eurobot
+[0.728s] running install
+[0.729s] running install_lib
+[0.730s] copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/build/lib/sprint6_eurobot/aruco_detector.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages/sprint6_eurobot
+[0.730s] byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages/sprint6_eurobot/aruco_detector.py to aruco_detector.cpython-38.pyc
+[0.732s] running install_data
+[0.732s] running install_egg_info
+[0.733s] removing '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages/sprint6_eurobot-0.0.0-py3.8.egg-info' (and everything under it)
+[0.734s] Copying ../../build/sprint6_eurobot/sprint6_eurobot.egg-info to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages/sprint6_eurobot-0.0.0-py3.8.egg-info
+[0.734s] running install_scripts
+[0.748s] Installing aruco_detector script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/sprint6_eurobot
+[0.748s] Installing fsm_navigator script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/sprint6_eurobot
+[0.748s] writing list of installed files to '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/install.log'
+[0.763s] Invoked command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/sprint6_eurobot' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/sprint6_eurobot build --build-base /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/build install --record /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/install.log --single-version-externally-managed install_data

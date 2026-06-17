@@ -1,0 +1,16 @@
+running develop
+running egg_info
+writing eurobot_real.egg-info/PKG-INFO
+writing dependency_links to eurobot_real.egg-info/dependency_links.txt
+writing entry points to eurobot_real.egg-info/entry_points.txt
+writing requirements to eurobot_real.egg-info/requires.txt
+writing top-level names to eurobot_real.egg-info/top_level.txt
+reading manifest file 'eurobot_real.egg-info/SOURCES.txt'
+writing manifest file 'eurobot_real.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/lib/python3.8/site-packages/eurobot-real.egg-link (link to .)
+Installing real_navigator script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/bin
+Installing real_vision_node script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/bin
+
+Installed /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/build/eurobot_real
+running symlink_data

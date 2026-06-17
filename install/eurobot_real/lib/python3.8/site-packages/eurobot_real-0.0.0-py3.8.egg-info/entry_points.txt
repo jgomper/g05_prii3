@@ -1,0 +1,4 @@
+[console_scripts]
+real_navigator = eurobot_real.real_navigator:main
+real_vision_node = eurobot_real.real_vision_node:main
+

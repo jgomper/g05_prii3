@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing sprint5_eurobot.egg-info/PKG-INFO
+writing dependency_links to sprint5_eurobot.egg-info/dependency_links.txt
+writing entry points to sprint5_eurobot.egg-info/entry_points.txt
+writing requirements to sprint5_eurobot.egg-info/requires.txt
+writing top-level names to sprint5_eurobot.egg-info/top_level.txt
+reading manifest file 'sprint5_eurobot.egg-info/SOURCES.txt'
+writing manifest file 'sprint5_eurobot.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages/sprint5-eurobot.egg-link (link to .)
+Installing pattern_matching script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/sprint5_eurobot
+Installing real_navigator script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/sprint5_eurobot
+
+Installed /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot
+running symlink_data
+symbolically linking /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/launch/pattern_matching_simulation_launch.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot/launch

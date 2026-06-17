@@ -1,0 +1,37 @@
+running develop
+Removing /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages/sprint6-eurobot.egg-link (link to .)
+running egg_info
+writing ../../build/sprint6_eurobot/sprint6_eurobot.egg-info/PKG-INFO
+writing dependency_links to ../../build/sprint6_eurobot/sprint6_eurobot.egg-info/dependency_links.txt
+writing entry points to ../../build/sprint6_eurobot/sprint6_eurobot.egg-info/entry_points.txt
+writing requirements to ../../build/sprint6_eurobot/sprint6_eurobot.egg-info/requires.txt
+writing top-level names to ../../build/sprint6_eurobot/sprint6_eurobot.egg-info/top_level.txt
+reading manifest file '../../build/sprint6_eurobot/sprint6_eurobot.egg-info/SOURCES.txt'
+writing manifest file '../../build/sprint6_eurobot/sprint6_eurobot.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/build
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/build/lib
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/build/lib/sprint6_eurobot
+copying sprint6_eurobot/fsm_navigator.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/build/lib/sprint6_eurobot
+copying sprint6_eurobot/__init__.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/build/lib/sprint6_eurobot
+copying sprint6_eurobot/fsm_aruco_navigator.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/build/lib/sprint6_eurobot
+running install
+running install_lib
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages/sprint6_eurobot
+copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/build/lib/sprint6_eurobot/fsm_navigator.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages/sprint6_eurobot
+copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/build/lib/sprint6_eurobot/__init__.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages/sprint6_eurobot
+copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/build/lib/sprint6_eurobot/fsm_aruco_navigator.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages/sprint6_eurobot
+byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages/sprint6_eurobot/fsm_navigator.py to fsm_navigator.cpython-38.pyc
+byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages/sprint6_eurobot/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages/sprint6_eurobot/fsm_aruco_navigator.py to fsm_aruco_navigator.cpython-38.pyc
+running install_data
+copying resource/sprint6_eurobot -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/share/ament_index/resource_index/packages
+copying package.xml -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/share/sprint6_eurobot
+copying launch/real_robot.launch.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/share/sprint6_eurobot/launch
+running install_egg_info
+Copying ../../build/sprint6_eurobot/sprint6_eurobot.egg-info to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages/sprint6_eurobot-0.0.0-py3.8.egg-info
+running install_scripts
+Installing fsm_aruco_navigator script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/sprint6_eurobot
+Installing fsm_navigator script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/sprint6_eurobot
+writing list of installed files to '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/install.log'

@@ -1,0 +1,4 @@
+[console_scripts]
+pattern_matching = sprint5_eurobot.pattern_matching:main
+real_navigator = sprint5_eurobot.real_navigator:main
+

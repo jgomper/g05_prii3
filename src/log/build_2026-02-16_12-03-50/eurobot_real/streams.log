@@ -1,0 +1,30 @@
+[1.494s] Invoking command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/build/eurobot_real': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/build/eurobot_real/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/build/eurobot_real/build --no-deps symlink_data
+[1.799s] running develop
+[1.975s] running egg_info
+[1.975s] creating eurobot_real.egg-info
+[1.975s] writing eurobot_real.egg-info/PKG-INFO
+[1.975s] writing dependency_links to eurobot_real.egg-info/dependency_links.txt
+[1.976s] writing entry points to eurobot_real.egg-info/entry_points.txt
+[1.976s] writing requirements to eurobot_real.egg-info/requires.txt
+[1.976s] writing top-level names to eurobot_real.egg-info/top_level.txt
+[1.977s] writing manifest file 'eurobot_real.egg-info/SOURCES.txt'
+[2.017s] reading manifest file 'eurobot_real.egg-info/SOURCES.txt'
+[2.017s] writing manifest file 'eurobot_real.egg-info/SOURCES.txt'
+[2.064s] running build_ext
+[2.064s] Creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/lib/python3.8/site-packages/site.py
+[2.067s] Creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/lib/python3.8/site-packages/eurobot-real.egg-link (link to .)
+[2.068s] Installing real_navigator script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/bin
+[2.069s] Installing real_vision_node script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/bin
+[2.069s] 
+[2.069s] Installed /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/build/eurobot_real
+[2.069s] running symlink_data
+[2.069s] creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/share/ament_index
+[2.070s] creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/share/ament_index/resource_index
+[2.070s] creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/share/ament_index/resource_index/packages
+[2.070s] symbolically linking /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/build/eurobot_real/resource/eurobot_real -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/share/ament_index/resource_index/packages
+[2.070s] symbolically linking /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/build/eurobot_real/package.xml -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/share/eurobot_real
+[2.071s] creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/share/eurobot_real/launch
+[2.071s] symbolically linking /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/build/eurobot_real/launch/real_launch.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/share/eurobot_real/launch
+[2.071s] creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/share/eurobot_real/rviz
+[2.071s] symbolically linking /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/build/eurobot_real/rviz/real_view.rviz -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/share/eurobot_real/rviz
+[2.101s] Invoked command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/build/eurobot_real' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/build/eurobot_real/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/install/eurobot_real/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/build/eurobot_real/build --no-deps symlink_data

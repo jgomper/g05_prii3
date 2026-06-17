@@ -1,0 +1,250 @@
+[0.272s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.272s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f2673a03dc0>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=12, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f2673a03dc0>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f2673a0b370>)
+[0.483s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.483s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.483s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.483s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.483s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.483s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.483s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS'
+[0.483s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.484s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.484s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.484s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.484s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.484s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.484s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.484s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.484s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.499s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.500s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extensions ['ignore', 'ignore_ament_install']
+[0.501s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extension 'ignore'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) ignored
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/eurobot_real) by extensions ['ignore', 'ignore_ament_install']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/eurobot_real) by extension 'ignore'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/eurobot_real) by extension 'ignore_ament_install'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/eurobot_real) by extensions ['colcon_pkg']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/eurobot_real) by extension 'colcon_pkg'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/eurobot_real) by extensions ['colcon_meta']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/eurobot_real) by extension 'colcon_meta'
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/eurobot_real) by extensions ['ros']
+[0.502s] Level 1:colcon.colcon_core.package_identification:_identify(src/eurobot_real) by extension 'ros'
+[0.506s] DEBUG:colcon.colcon_core.package_identification:Package 'src/eurobot_real' with type 'ros.ament_python' and name 'eurobot_real'
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extensions ['ignore', 'ignore_ament_install']
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extension 'ignore'
+[0.506s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) ignored
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extensions ['ignore', 'ignore_ament_install']
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extension 'ignore'
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) ignored
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint4_eurobot) by extensions ['ignore', 'ignore_ament_install']
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint4_eurobot) by extension 'ignore'
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint4_eurobot) by extension 'ignore_ament_install'
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint4_eurobot) by extensions ['colcon_pkg']
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint4_eurobot) by extension 'colcon_pkg'
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint4_eurobot) by extensions ['colcon_meta']
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint4_eurobot) by extension 'colcon_meta'
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint4_eurobot) by extensions ['ros']
+[0.507s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint4_eurobot) by extension 'ros'
+[0.508s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sprint4_eurobot' with type 'ros.ament_python' and name 'sprint4_eurobot'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint5_eurobot) by extensions ['ignore', 'ignore_ament_install']
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint5_eurobot) by extension 'ignore'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint5_eurobot) by extension 'ignore_ament_install'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint5_eurobot) by extensions ['colcon_pkg']
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint5_eurobot) by extension 'colcon_pkg'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint5_eurobot) by extensions ['colcon_meta']
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint5_eurobot) by extension 'colcon_meta'
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint5_eurobot) by extensions ['ros']
+[0.509s] Level 1:colcon.colcon_core.package_identification:_identify(src/sprint5_eurobot) by extension 'ros'
+[0.510s] DEBUG:colcon.colcon_core.package_identification:Package 'src/sprint5_eurobot' with type 'ros.ament_python' and name 'sprint5_eurobot'
+[0.510s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.510s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.510s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.510s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.510s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.532s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.532s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.534s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 3 installed packages in /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install
+[0.537s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 371 installed packages in /opt/ros/foxy
+[0.548s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.651s] Level 5:colcon.colcon_core.verb:set package 'eurobot_real' build argument 'cmake_args' from command line to 'None'
+[0.651s] Level 5:colcon.colcon_core.verb:set package 'eurobot_real' build argument 'cmake_target' from command line to 'None'
+[0.651s] Level 5:colcon.colcon_core.verb:set package 'eurobot_real' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.651s] Level 5:colcon.colcon_core.verb:set package 'eurobot_real' build argument 'cmake_clean_cache' from command line to 'False'
+[0.651s] Level 5:colcon.colcon_core.verb:set package 'eurobot_real' build argument 'cmake_clean_first' from command line to 'False'
+[0.651s] Level 5:colcon.colcon_core.verb:set package 'eurobot_real' build argument 'cmake_force_configure' from command line to 'False'
+[0.651s] Level 5:colcon.colcon_core.verb:set package 'eurobot_real' build argument 'ament_cmake_args' from command line to 'None'
+[0.651s] Level 5:colcon.colcon_core.verb:set package 'eurobot_real' build argument 'catkin_cmake_args' from command line to 'None'
+[0.651s] Level 5:colcon.colcon_core.verb:set package 'eurobot_real' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.651s] DEBUG:colcon.colcon_core.verb:Building package 'eurobot_real' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real', 'merge_install': False, 'path': '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/eurobot_real', 'symlink_install': False, 'test_result_base': None}
+[0.652s] Level 5:colcon.colcon_core.verb:set package 'sprint4_eurobot' build argument 'cmake_args' from command line to 'None'
+[0.652s] Level 5:colcon.colcon_core.verb:set package 'sprint4_eurobot' build argument 'cmake_target' from command line to 'None'
+[0.652s] Level 5:colcon.colcon_core.verb:set package 'sprint4_eurobot' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.652s] Level 5:colcon.colcon_core.verb:set package 'sprint4_eurobot' build argument 'cmake_clean_cache' from command line to 'False'
+[0.652s] Level 5:colcon.colcon_core.verb:set package 'sprint4_eurobot' build argument 'cmake_clean_first' from command line to 'False'
+[0.652s] Level 5:colcon.colcon_core.verb:set package 'sprint4_eurobot' build argument 'cmake_force_configure' from command line to 'False'
+[0.652s] Level 5:colcon.colcon_core.verb:set package 'sprint4_eurobot' build argument 'ament_cmake_args' from command line to 'None'
+[0.652s] Level 5:colcon.colcon_core.verb:set package 'sprint4_eurobot' build argument 'catkin_cmake_args' from command line to 'None'
+[0.652s] Level 5:colcon.colcon_core.verb:set package 'sprint4_eurobot' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.652s] DEBUG:colcon.colcon_core.verb:Building package 'sprint4_eurobot' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot', 'merge_install': False, 'path': '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/sprint4_eurobot', 'symlink_install': False, 'test_result_base': None}
+[0.653s] Level 5:colcon.colcon_core.verb:set package 'sprint5_eurobot' build argument 'cmake_args' from command line to 'None'
+[0.653s] Level 5:colcon.colcon_core.verb:set package 'sprint5_eurobot' build argument 'cmake_target' from command line to 'None'
+[0.653s] Level 5:colcon.colcon_core.verb:set package 'sprint5_eurobot' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.653s] Level 5:colcon.colcon_core.verb:set package 'sprint5_eurobot' build argument 'cmake_clean_cache' from command line to 'False'
+[0.653s] Level 5:colcon.colcon_core.verb:set package 'sprint5_eurobot' build argument 'cmake_clean_first' from command line to 'False'
+[0.653s] Level 5:colcon.colcon_core.verb:set package 'sprint5_eurobot' build argument 'cmake_force_configure' from command line to 'False'
+[0.653s] Level 5:colcon.colcon_core.verb:set package 'sprint5_eurobot' build argument 'ament_cmake_args' from command line to 'None'
+[0.653s] Level 5:colcon.colcon_core.verb:set package 'sprint5_eurobot' build argument 'catkin_cmake_args' from command line to 'None'
+[0.653s] Level 5:colcon.colcon_core.verb:set package 'sprint5_eurobot' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.653s] DEBUG:colcon.colcon_core.verb:Building package 'sprint5_eurobot' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot', 'merge_install': False, 'path': '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/sprint5_eurobot', 'symlink_install': False, 'test_result_base': None}
+[0.653s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.655s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.655s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/eurobot_real' with build type 'ament_python'
+[0.655s] Level 1:colcon.colcon_core.shell:create_environment_hook('eurobot_real', 'ament_prefix_path')
+[0.658s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.658s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/hook/ament_prefix_path.ps1'
+[0.659s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/hook/ament_prefix_path.dsv'
+[0.660s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/hook/ament_prefix_path.sh'
+[0.661s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.661s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.667s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/sprint4_eurobot' with build type 'ament_python'
+[0.668s] Level 1:colcon.colcon_core.shell:create_environment_hook('sprint4_eurobot', 'ament_prefix_path')
+[0.668s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/hook/ament_prefix_path.ps1'
+[0.670s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/hook/ament_prefix_path.dsv'
+[0.670s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/hook/ament_prefix_path.sh'
+[0.671s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.671s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.677s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/sprint5_eurobot' with build type 'ament_python'
+[0.678s] Level 1:colcon.colcon_core.shell:create_environment_hook('sprint5_eurobot', 'ament_prefix_path')
+[0.678s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot/hook/ament_prefix_path.ps1'
+[0.680s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot/hook/ament_prefix_path.dsv'
+[0.680s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot/hook/ament_prefix_path.sh'
+[0.681s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.681s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.017s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/eurobot_real'
+[1.018s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.018s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.347s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/sprint4_eurobot'
+[1.347s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.347s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.672s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/sprint5_eurobot'
+[1.673s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.673s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.199s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/build
+[2.211s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build
+[2.214s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/build
+[2.727s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/build
+[2.728s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/eurobot_real': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/eurobot_real build --build-base /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/build install --record /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/install.log --single-version-externally-managed install_data --force
+[2.733s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build
+[2.735s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/sprint4_eurobot': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/sprint4_eurobot build --build-base /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build install --record /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/install.log --install-scripts $base/lib/sprint4_eurobot --single-version-externally-managed install_data --force
+[2.741s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/build
+[2.744s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/sprint5_eurobot': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/sprint5_eurobot build --build-base /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/build install --record /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/install.log --install-scripts $base/lib/sprint5_eurobot --single-version-externally-managed install_data --force
+[3.134s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/eurobot_real' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/eurobot_real build --build-base /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/build install --record /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/install.log --single-version-externally-managed install_data --force
+[3.144s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real' for CMake module files
+[3.145s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real' for CMake config files
+[3.146s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib'
+[3.146s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/bin'
+[3.147s] Level 1:colcon.colcon_core.shell:create_environment_hook('eurobot_real', 'path')
+[3.147s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/hook/path.ps1'
+[3.148s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/hook/path.dsv'
+[3.148s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/hook/path.sh'
+[3.149s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/pkgconfig/eurobot_real.pc'
+[3.150s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages'
+[3.150s] Level 1:colcon.colcon_core.shell:create_environment_hook('eurobot_real', 'pythonpath')
+[3.150s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/hook/pythonpath.ps1'
+[3.151s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/hook/pythonpath.dsv'
+[3.151s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/hook/pythonpath.sh'
+[3.152s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/bin'
+[3.152s] Level 1:colcon.colcon_core.shell:create_environment_hook('eurobot_real', 'pythonscriptspath')
+[3.153s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/hook/pythonscriptspath.ps1'
+[3.153s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/hook/pythonscriptspath.dsv'
+[3.154s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/hook/pythonscriptspath.sh'
+[3.154s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(eurobot_real)
+[3.155s] INFO:colcon.colcon_core.shell:Creating package script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/package.ps1'
+[3.157s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/package.dsv'
+[3.159s] INFO:colcon.colcon_core.shell:Creating package script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/package.sh'
+[3.160s] INFO:colcon.colcon_core.shell:Creating package script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/package.bash'
+[3.162s] INFO:colcon.colcon_core.shell:Creating package script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/package.zsh'
+[3.163s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/colcon-core/packages/eurobot_real)
+[3.166s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot' for CMake module files
+[3.167s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/sprint4_eurobot' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/sprint4_eurobot build --build-base /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build install --record /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/install.log --install-scripts $base/lib/sprint4_eurobot --single-version-externally-managed install_data --force
+[3.168s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot' for CMake config files
+[3.169s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib'
+[3.169s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/bin'
+[3.169s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/pkgconfig/sprint4_eurobot.pc'
+[3.169s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages'
+[3.169s] Level 1:colcon.colcon_core.shell:create_environment_hook('sprint4_eurobot', 'pythonpath')
+[3.170s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/hook/pythonpath.ps1'
+[3.170s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/hook/pythonpath.dsv'
+[3.171s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/hook/pythonpath.sh'
+[3.172s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/bin'
+[3.172s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sprint4_eurobot)
+[3.173s] INFO:colcon.colcon_core.shell:Creating package script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/package.ps1'
+[3.173s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/package.dsv'
+[3.174s] INFO:colcon.colcon_core.shell:Creating package script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/package.sh'
+[3.175s] INFO:colcon.colcon_core.shell:Creating package script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/package.bash'
+[3.176s] INFO:colcon.colcon_core.shell:Creating package script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/package.zsh'
+[3.177s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/colcon-core/packages/sprint4_eurobot)
+[3.177s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot' for CMake module files
+[3.179s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/sprint5_eurobot' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/sprint5_eurobot build --build-base /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/build install --record /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/install.log --install-scripts $base/lib/sprint5_eurobot --single-version-externally-managed install_data --force
+[3.179s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot' for CMake config files
+[3.180s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib'
+[3.180s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/bin'
+[3.180s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/pkgconfig/sprint5_eurobot.pc'
+[3.180s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages'
+[3.180s] Level 1:colcon.colcon_core.shell:create_environment_hook('sprint5_eurobot', 'pythonpath')
+[3.180s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot/hook/pythonpath.ps1'
+[3.181s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot/hook/pythonpath.dsv'
+[3.181s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot/hook/pythonpath.sh'
+[3.182s] Level 1:colcon.colcon_core.environment:checking '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/bin'
+[3.182s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(sprint5_eurobot)
+[3.183s] INFO:colcon.colcon_core.shell:Creating package script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot/package.ps1'
+[3.183s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot/package.dsv'
+[3.184s] INFO:colcon.colcon_core.shell:Creating package script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot/package.sh'
+[3.185s] INFO:colcon.colcon_core.shell:Creating package script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot/package.bash'
+[3.185s] INFO:colcon.colcon_core.shell:Creating package script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/sprint5_eurobot/package.zsh'
+[3.186s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/share/colcon-core/packages/sprint5_eurobot)
+[3.186s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.186s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.186s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[3.186s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.193s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.193s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.193s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[3.210s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[3.210s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/local_setup.ps1'
+[3.212s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/_local_setup_util_ps1.py'
+[3.214s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/setup.ps1'
+[3.215s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/local_setup.sh'
+[3.216s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/_local_setup_util_sh.py'
+[3.217s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/setup.sh'
+[3.218s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/local_setup.bash'
+[3.219s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/setup.bash'
+[3.220s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/local_setup.zsh'
+[3.221s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/setup.zsh'

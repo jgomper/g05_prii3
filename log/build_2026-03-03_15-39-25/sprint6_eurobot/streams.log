@@ -1,0 +1,27 @@
+[0.961s] Invoking command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/build --no-deps symlink_data
+[1.277s] running develop
+[1.459s] running egg_info
+[1.460s] creating sprint6_eurobot.egg-info
+[1.460s] writing sprint6_eurobot.egg-info/PKG-INFO
+[1.460s] writing dependency_links to sprint6_eurobot.egg-info/dependency_links.txt
+[1.460s] writing entry points to sprint6_eurobot.egg-info/entry_points.txt
+[1.460s] writing requirements to sprint6_eurobot.egg-info/requires.txt
+[1.460s] writing top-level names to sprint6_eurobot.egg-info/top_level.txt
+[1.464s] writing manifest file 'sprint6_eurobot.egg-info/SOURCES.txt'
+[1.507s] reading manifest file 'sprint6_eurobot.egg-info/SOURCES.txt'
+[1.508s] writing manifest file 'sprint6_eurobot.egg-info/SOURCES.txt'
+[1.554s] running build_ext
+[1.555s] Creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages/site.py
+[1.557s] Creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages/sprint6-eurobot.egg-link (link to .)
+[1.558s] Installing fsm_navigator script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/sprint6_eurobot
+[1.558s] 
+[1.559s] Installed /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot
+[1.559s] running symlink_data
+[1.559s] creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/share/ament_index
+[1.559s] creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/share/ament_index/resource_index
+[1.559s] creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/share/ament_index/resource_index/packages
+[1.559s] symbolically linking /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/resource/sprint6_eurobot -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/share/ament_index/resource_index/packages
+[1.559s] symbolically linking /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/package.xml -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/share/sprint6_eurobot
+[1.559s] creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/share/sprint6_eurobot/launch
+[1.560s] symbolically linking /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/launch/real_robot.launch.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/share/sprint6_eurobot/launch
+[1.591s] Invoked command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint6_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint6_eurobot/build --no-deps symlink_data

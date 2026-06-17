@@ -1,0 +1,17 @@
+[1.138s] Invoking command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/build --no-deps symlink_data
+[1.371s] running develop
+[1.518s] running egg_info
+[1.518s] writing eurobot_real.egg-info/PKG-INFO
+[1.518s] writing dependency_links to eurobot_real.egg-info/dependency_links.txt
+[1.519s] writing entry points to eurobot_real.egg-info/entry_points.txt
+[1.519s] writing requirements to eurobot_real.egg-info/requires.txt
+[1.519s] writing top-level names to eurobot_real.egg-info/top_level.txt
+[1.560s] reading manifest file 'eurobot_real.egg-info/SOURCES.txt'
+[1.561s] writing manifest file 'eurobot_real.egg-info/SOURCES.txt'
+[1.594s] running build_ext
+[1.594s] Creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages/eurobot-real.egg-link (link to .)
+[1.595s] Installing real_navigator script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/bin
+[1.596s] Installing real_vision_node script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/bin
+[1.596s] 
+[1.596s] Installed /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real
+[1.596s] running symlink_data

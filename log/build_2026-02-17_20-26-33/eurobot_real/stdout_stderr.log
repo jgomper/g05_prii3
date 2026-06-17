@@ -1,0 +1,38 @@
+running develop
+Removing /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages/eurobot-real.egg-link (link to .)
+running egg_info
+writing ../../build/eurobot_real/eurobot_real.egg-info/PKG-INFO
+writing dependency_links to ../../build/eurobot_real/eurobot_real.egg-info/dependency_links.txt
+writing entry points to ../../build/eurobot_real/eurobot_real.egg-info/entry_points.txt
+writing requirements to ../../build/eurobot_real/eurobot_real.egg-info/requires.txt
+writing top-level names to ../../build/eurobot_real/eurobot_real.egg-info/top_level.txt
+reading manifest file '../../build/eurobot_real/eurobot_real.egg-info/SOURCES.txt'
+writing manifest file '../../build/eurobot_real/eurobot_real.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/build
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/build/lib
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/build/lib/eurobot_real
+copying eurobot_real/real_vision_node.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/build/lib/eurobot_real
+copying eurobot_real/__init__.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/build/lib/eurobot_real
+copying eurobot_real/real_navigator.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/build/lib/eurobot_real
+running install
+running install_lib
+creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages/eurobot_real
+copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/build/lib/eurobot_real/real_vision_node.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages/eurobot_real
+copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/build/lib/eurobot_real/__init__.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages/eurobot_real
+copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/build/lib/eurobot_real/real_navigator.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages/eurobot_real
+byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages/eurobot_real/real_vision_node.py to real_vision_node.cpython-38.pyc
+byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages/eurobot_real/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages/eurobot_real/real_navigator.py to real_navigator.cpython-38.pyc
+running install_data
+copying resource/eurobot_real -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/ament_index/resource_index/packages
+copying package.xml -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real
+copying launch/real_launch.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/launch
+copying rviz/real_view.rviz -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/share/eurobot_real/rviz
+running install_egg_info
+Copying ../../build/eurobot_real/eurobot_real.egg-info to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/lib/python3.8/site-packages/eurobot_real-0.0.0-py3.8.egg-info
+running install_scripts
+Installing real_navigator script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/bin
+Installing real_vision_node script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/eurobot_real/bin
+writing list of installed files to '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/eurobot_real/install.log'

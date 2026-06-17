@@ -1,0 +1,15 @@
+package.xml
+setup.cfg
+setup.py
+../../build/sprint6_eurobot/sprint6_eurobot.egg-info/PKG-INFO
+../../build/sprint6_eurobot/sprint6_eurobot.egg-info/SOURCES.txt
+../../build/sprint6_eurobot/sprint6_eurobot.egg-info/dependency_links.txt
+../../build/sprint6_eurobot/sprint6_eurobot.egg-info/entry_points.txt
+../../build/sprint6_eurobot/sprint6_eurobot.egg-info/requires.txt
+../../build/sprint6_eurobot/sprint6_eurobot.egg-info/top_level.txt
+../../build/sprint6_eurobot/sprint6_eurobot.egg-info/zip-safe
+launch/real_robot.launch.py
+resource/sprint6_eurobot
+sprint6_eurobot/__init__.py
+sprint6_eurobot/aruco_detector.py
+sprint6_eurobot/fsm_navigator.py

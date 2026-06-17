@@ -1,0 +1,56 @@
+[1.540s] Invoking command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build
+[1.851s] running develop
+[2.037s] Removing /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4-eurobot.egg-link (link to .)
+[2.064s] Invoked command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build
+[2.066s] Invoking command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/sprint4_eurobot': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/sprint4_eurobot build --build-base /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build install --record /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/install.log --install-scripts $base/lib/sprint4_eurobot --single-version-externally-managed install_data --force
+[2.357s] running egg_info
+[2.358s] writing ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/PKG-INFO
+[2.358s] writing dependency_links to ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/dependency_links.txt
+[2.359s] writing entry points to ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/entry_points.txt
+[2.359s] writing requirements to ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/requires.txt
+[2.359s] writing top-level names to ../../build/sprint4_eurobot/sprint4_eurobot.egg-info/top_level.txt
+[2.406s] reading manifest file '../../build/sprint4_eurobot/sprint4_eurobot.egg-info/SOURCES.txt'
+[2.408s] writing manifest file '../../build/sprint4_eurobot/sprint4_eurobot.egg-info/SOURCES.txt'
+[2.408s] running build
+[2.408s] running build_py
+[2.409s] creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build
+[2.409s] creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib
+[2.409s] creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot
+[2.409s] copying sprint4_eurobot/__init__.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot
+[2.410s] copying sprint4_eurobot/cenital_node.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot
+[2.410s] copying sprint4_eurobot/pattern_matching.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot
+[2.410s] copying sprint4_eurobot/real_navigator.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot
+[2.410s] running install
+[2.411s] running install_lib
+[2.413s] creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot
+[2.413s] copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot/__init__.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot
+[2.413s] copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot/cenital_node.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot
+[2.414s] copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot/pattern_matching.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot
+[2.414s] copying /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build/lib/sprint4_eurobot/real_navigator.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot
+[2.414s] byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot/__init__.py to __init__.cpython-38.pyc
+[2.416s] byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot/cenital_node.py to cenital_node.cpython-38.pyc
+[2.418s] byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot/pattern_matching.py to pattern_matching.cpython-38.pyc
+[2.420s] byte-compiling /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot/real_navigator.py to real_navigator.cpython-38.pyc
+[2.421s] running install_data
+[2.422s] copying resource/sprint4_eurobot -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/ament_index/resource_index/packages
+[2.422s] copying package.xml -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot
+[2.422s] copying launch/eurobot_launch.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/launch
+[2.422s] copying launch/warehouse_detection.launch.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/launch
+[2.423s] copying launch/real_nav_stack.launch.py -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/launch
+[2.423s] copying world/eurobot.world -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/world
+[2.423s] copying rviz/eurobot.rviz -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/rviz
+[2.424s] copying rviz/eurobot_config.rviz -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/rviz
+[2.424s] copying materials/scripts/eurobot.material -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/scripts
+[2.424s] copying materials/textures/mapa_eurobot_rotated.png -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/textures
+[2.425s] copying materials/textures/aruco_origin.png -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/textures
+[2.426s] copying materials/textures/aruco_robot.png -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/materials/textures
+[2.426s] copying models/waffle_aruco/model.config -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/models/waffle_aruco
+[2.427s] copying models/waffle_aruco/model.sdf -> /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/share/sprint4_eurobot/models/waffle_aruco
+[2.427s] running install_egg_info
+[2.429s] Copying ../../build/sprint4_eurobot/sprint4_eurobot.egg-info to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages/sprint4_eurobot-0.0.0-py3.8.egg-info
+[2.430s] running install_scripts
+[2.454s] Installing cenital_node script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/sprint4_eurobot
+[2.454s] Installing pattern_matching script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/sprint4_eurobot
+[2.455s] Installing real_navigator script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/sprint4_eurobot
+[2.455s] writing list of installed files to '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/install.log'
+[2.498s] Invoked command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/src/sprint4_eurobot' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint4_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/sprint4_eurobot build --build-base /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/build install --record /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint4_eurobot/install.log --install-scripts $base/lib/sprint4_eurobot --single-version-externally-managed install_data --force

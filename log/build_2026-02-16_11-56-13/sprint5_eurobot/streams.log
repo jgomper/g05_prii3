@@ -1,0 +1,17 @@
+[2.434s] Invoking command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/build --no-deps symlink_data
+[2.972s] running develop
+[3.285s] running egg_info
+[3.285s] writing sprint5_eurobot.egg-info/PKG-INFO
+[3.286s] writing dependency_links to sprint5_eurobot.egg-info/dependency_links.txt
+[3.286s] writing entry points to sprint5_eurobot.egg-info/entry_points.txt
+[3.286s] writing requirements to sprint5_eurobot.egg-info/requires.txt
+[3.286s] writing top-level names to sprint5_eurobot.egg-info/top_level.txt
+[3.365s] reading manifest file 'sprint5_eurobot.egg-info/SOURCES.txt'
+[3.367s] writing manifest file 'sprint5_eurobot.egg-info/SOURCES.txt'
+[3.453s] running build_ext
+[3.453s] Creating /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages/sprint5-eurobot.egg-link (link to .)
+[3.454s] Installing real_navigator script to /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/sprint5_eurobot
+[3.460s] 
+[3.461s] Installed /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot
+[3.461s] running symlink_data
+[3.524s] Invoked command in '/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot' returned '0': PYTHONPATH=/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/install/sprint5_eurobot/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/rodrigo/Proyecto_III/g05_prii3/g05_prii3_WS/build/sprint5_eurobot/build --no-deps symlink_data

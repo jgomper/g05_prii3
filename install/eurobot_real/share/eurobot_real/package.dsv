@@ -1,0 +1,12 @@
+source;share/eurobot_real/hook/path.ps1
+source;share/eurobot_real/hook/path.dsv
+source;share/eurobot_real/hook/path.sh
+source;share/eurobot_real/hook/pythonpath.ps1
+source;share/eurobot_real/hook/pythonpath.dsv
+source;share/eurobot_real/hook/pythonpath.sh
+source;share/eurobot_real/hook/pythonscriptspath.ps1
+source;share/eurobot_real/hook/pythonscriptspath.dsv
+source;share/eurobot_real/hook/pythonscriptspath.sh
+source;share/eurobot_real/hook/ament_prefix_path.ps1
+source;share/eurobot_real/hook/ament_prefix_path.dsv
+source;share/eurobot_real/hook/ament_prefix_path.sh
